@@ -5,6 +5,7 @@ import 'package:resume/resources/styles.dart';
 
 import 'package:resume/widgets/header.dart';
 import 'package:resume/widgets/page_view/vertical_page_tabs.dart';
+import 'package:resume/widgets/page_view/vertical_tab_bar.dart';
 import 'package:resume/widgets/text/hyperlink.dart';
 import 'package:resume/widgets/work_card.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -96,7 +97,7 @@ This project won silver medal at iCan 2020, a silver medal at Warsaw Invention S
         position: 'Android Developer',
         description: TextSpan(
           text:
-              'DWas hired as an android developer. In 3 months in solo created youtube-like android app MVP.',
+              'Was hired as an android developer. In 3 months in solo created youtube-like android app MVP.',
           style: primaryTextStyle(context),
         ),
         timeInterval: 'Jun 2018 - Oct 2018',
@@ -104,13 +105,24 @@ This project won silver medal at iCan 2020, a silver medal at Warsaw Invention S
       )
     ];
 
-    List<String> pageTabs = [];
-    List<Widget> pages = [];
-
-    for (int i = 0; i < jobModels.length; i++) {
-      pageTabs.add(jobModels[i].titleShort);
-      pages.add(WorkCard(jobModels[i]));
-    }
+    List<Widget> pageTabs = List.generate(
+      jobModels.length,
+      (index) => Column(
+        crossAxisAlignment: CrossAxisAlignment.end,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          RotatedBox(
+            quarterTurns: 1,
+            child: Text(
+              jobModels[index].titleShort,
+              style: const TextStyle(fontSize: 24),
+            ),
+          ),
+        ],
+      ),
+    ).reversed.toList();
+    List<Widget> pages =
+        List.generate(jobModels.length, (index) => WorkCard(jobModels[index]));
 
     return Column(
       children: [
@@ -122,11 +134,23 @@ This project won silver medal at iCan 2020, a silver medal at Warsaw Invention S
           child: Row(
             children: [
               Flexible(
-                flex: 1,
-                child: VerticalPageTabs(pageController, pageTabs),
-              ),
+                  flex: 1,
+                  fit: FlexFit.tight,
+                  child: Column(
+                    children: [
+                      Flexible(flex: 1,child: Container()),
+                      Flexible(
+                        flex: 3,
+                        child: VerticalTabBar(
+                          pageTabs,
+                          pageController
+                        ),
+                      ),
+                      Flexible(flex: 1,child: Container())
+                    ],
+                  )),
               Flexible(
-                flex: 2,
+                flex: 4,
                 child: PageView(
                     controller: pageController,
                     physics: const NeverScrollableScrollPhysics(),
