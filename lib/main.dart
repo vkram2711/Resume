@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:resume/pages/about_page.dart';
+import 'package:resume/pages/achievements_page.dart';
+import 'package:resume/pages/contact_page.dart';
 import 'package:resume/pages/portfolio_page.dart';
 import 'package:resume/pages/intro_page.dart';
 import 'package:resume/pages/work_page.dart';
@@ -17,7 +19,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = PageController(initialPage: 0);
-    const pages = [IntroPage(), AboutPage(), PortfolioPage(), WorkPage()];
+    const pages = [IntroPage(), AboutPage(), PortfolioPage(), WorkPage(), AchievementsPage(), ContactPage()];
 
     return MaterialApp(
       title: 'Flutter Demo',

@@ -13,7 +13,7 @@ class BasePage extends StatelessWidget {
     return Row(
       children: [
         Flexible(
-          flex: 1,
+          flex: 3,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -21,7 +21,7 @@ class BasePage extends StatelessWidget {
           ),
         ),
         Flexible(
-          flex: 1,
+          flex: 2,
           fit: FlexFit.tight,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
