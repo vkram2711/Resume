@@ -1,5 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:resume/widgets/page_view/top_bar_tap.dart';
+import 'package:resume/widgets/page_view/top_bar_tap.dart';
+import 'package:resume/widgets/page_view/top_bar_tap.dart';
+import 'package:resume/widgets/page_view/top_bar_tap.dart';
+import 'package:resume/widgets/page_view/top_bar_tap.dart';
 import 'package:resume/widgets/resume_button.dart';
 import 'package:resume/widgets/text/title_text.dart';
 
@@ -13,22 +18,12 @@ class ResumeBar extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20),
-            child: TitleText('1. ', 'About'),
-          ),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20),
-            child: TitleText('2. ', 'Experience'),
-          ),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20),
-            child: TitleText('3. ', 'Work'),
-          ),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20),
-            child: TitleText('4. ', 'Contact'),
-          ),
+          const TopBarTab('About', 1),
+          const TopBarTab('Portfolio', 2),
+          const TopBarTab('Work', 3),
+          const TopBarTab('Achievements', 4),
+          const TopBarTab('Contact', 5),
+
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: ResumeButton('Resume', () {}),

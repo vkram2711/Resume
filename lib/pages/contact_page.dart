@@ -7,6 +7,7 @@ import 'package:url_launcher/url_launcher.dart';
 class ContactPage extends StatelessWidget{
   const ContactPage({Key? key}) : super(key: key);
 
+  //TODO: add in the top contant text with dividers left and right
   @override
   Widget build(BuildContext context) {
     return Column(

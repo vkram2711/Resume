@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:resume/widgets/resume_inherited.dart';
 
 class Rotation45Degree extends StatelessWidget {
   final Widget child;
@@ -89,17 +90,16 @@ class VerticalLine extends StatelessWidget {
 }
 
 class PageViewIndicator extends StatelessWidget {
-  final PageController pageController;
   final int numberOfPages;
 
-  const PageViewIndicator(this.pageController, this.numberOfPages, {Key? key})
+  const PageViewIndicator(this.numberOfPages, {Key? key})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     List<Widget> indicators = [];
     for (int i = 0; i < numberOfPages; i++) {
-      indicators.add(Indicator(i, pageController));
+      indicators.add(Indicator(i, ResumeInherited.of(context).pageController));
       if (i + 1 < numberOfPages) {
         indicators.add(const VerticalLine(height: 40));
       }

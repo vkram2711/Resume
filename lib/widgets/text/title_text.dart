@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:resume/resources/styles.dart';
 
 class TitleText extends StatelessWidget {
   final String accentText;
@@ -11,16 +12,20 @@ class TitleText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return RichText(
-        text: TextSpan(children: [
-      TextSpan(
-          text: accentText,
-          style: TextStyle(
-              color: Theme.of(context).splashColor, fontSize: fontSize)),
-      TextSpan(
-          text: titleText,
-          style: TextStyle(
-              color: Theme.of(context).primaryColor, fontSize: fontSize))
-    ]));
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      child: RichText(
+        text: TextSpan(
+          children: [
+            TextSpan(
+                text: accentText,
+                style: accentTextStyle(context, fontSize: fontSize)),
+            TextSpan(
+                text: titleText,
+                style: primaryTextStyle(context, fontSize: fontSize),),
+          ],
+        ),
+      ),
+    );
   }
 }
