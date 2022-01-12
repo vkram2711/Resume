@@ -6,6 +6,7 @@ class JobModel {
   TextSpan title;
   String titleShort;
   String position;
+  String timeInterval;
   TextSpan description;
   List<String> skills;
 
@@ -15,6 +16,7 @@ class JobModel {
       required this.title,
       required this.titleShort,
       required this.position,
+      required this.timeInterval,
       required this.description,
       required this.skills});
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:resume/models/job_model.dart';
 import 'package:resume/widgets/company_logo.dart';
 import 'package:resume/widgets/skill_badge.dart';
+import 'package:resume/widgets/text/primary_text.dart';
 import 'package:resume/widgets/text/secondary_header_text.dart';
 
 //TODO: timestapms
@@ -39,7 +40,7 @@ class WorkCard extends StatelessWidget {
             Flexible(
               flex: 3,
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 32),
+                padding: const EdgeInsets.only(left: 32, right: 32, bottom: 32),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -52,11 +53,20 @@ class WorkCard extends StatelessWidget {
                       child: SecondaryHeaderText(jobModel.position),
                     ),
                     RichText(text: jobModel.description),
+
                   ],
                 ),
               ),
-            )
+            ),
+
           ],
+        ),
+        Align(
+          alignment: Alignment.bottomRight,
+          child: Padding(
+            padding: const EdgeInsets.only(right: 32),
+            child: PrimaryText(jobModel.timeInterval),
+          ),
         )
       ],
     );

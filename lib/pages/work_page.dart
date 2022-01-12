@@ -44,6 +44,7 @@ class WorkPage extends StatelessWidget {
 • Managed team of 3 devs''',
           style: primaryTextStyle(context),
         ),
+        timeInterval: 'Jun 2021 - Nov 2021',
         skills: ['Flutter', 'Integrated testing', 'Management'],
       ),
       JobModel(
@@ -62,6 +63,7 @@ class WorkPage extends StatelessWidget {
 This project won silver medal at iCan 2020, a silver medal at Warsaw Invention Show, and a gold medal at INTARG Poland.''',
           style: primaryTextStyle(context),
         ),
+        timeInterval: 'Nov 2019 - Dec 2021',
         skills: [
           'Flutter',
           'Flask',
@@ -82,6 +84,7 @@ This project won silver medal at iCan 2020, a silver medal at Warsaw Invention S
           style: primaryTextStyle(context),
         ),
         skills: ['Android'],
+        timeInterval: 'Nov 2018 - May 2019',
       ),
       JobModel(
         mainImage: 'assets/bond.png',
@@ -96,6 +99,7 @@ This project won silver medal at iCan 2020, a silver medal at Warsaw Invention S
               'DWas hired as an android developer. In 3 months in solo created youtube-like android app MVP.',
           style: primaryTextStyle(context),
         ),
+        timeInterval: 'Jun 2018 - Oct 2018',
         skills: ['Android'],
       )
     ];
