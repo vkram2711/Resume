@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:resume/mobile_screen.dart';
 import 'package:resume/pages/about_page.dart';
 import 'package:resume/pages/achievements_page.dart';
 import 'package:resume/pages/contact_page.dart';
 import 'package:resume/pages/portfolio_page.dart';
 import 'package:resume/pages/intro_page.dart';
 import 'package:resume/pages/work_page.dart';
+import 'package:resume/web_screen.dart';
 import 'package:resume/widgets/page_view/page_view_indicator.dart';
 import 'package:resume/widgets/resume_bar.dart';
 import 'package:resume/widgets/resume_inherited.dart';
@@ -19,8 +21,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = PageController(initialPage: 0);
-    const pages = [IntroPage(), AboutPage(), PortfolioPage(), WorkPage(), AchievementsPage(), ContactPage()];
+
 
     return MaterialApp(
       title: 'Flutter Demo',
@@ -32,43 +33,15 @@ class MyApp extends StatelessWidget {
           primaryColor: Colors.grey[400]),
       home: Scaffold(
         backgroundColor: Colors.black,
-        body: ResumeInherited(
-          controller,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const ResumeBar(),
-              Expanded(
-                child: Stack(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 185),
-                      child: PageView(
-                          controller: controller,
-                          scrollDirection: Axis.vertical,
-                          children: pages),
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            Padding(
-                              padding:
-                                  const EdgeInsets.only(bottom: 155, right: 155),
-                              child: PageViewIndicator(pages.length),
-                            ),
-                          ],
-                        ),
-                      ],
-                    )
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ),
+        body: LayoutBuilder(
+          builder: (BuildContext context, BoxConstraints constraints) {
+            if(constraints.maxWidth > 1050) {
+              return const WebScreen();
+            } else {
+              return const MobileScreen();
+            }
+          },
+        )
       ),
     );
   }

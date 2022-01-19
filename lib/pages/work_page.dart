@@ -4,8 +4,10 @@ import 'package:resume/models/job_model.dart';
 import 'package:resume/resources/styles.dart';
 
 import 'package:resume/widgets/header.dart';
+import 'package:resume/widgets/page_view/horizontal_tab_bar.dart';
 import 'package:resume/widgets/page_view/vertical_page_tabs.dart';
 import 'package:resume/widgets/page_view/vertical_tab_bar.dart';
+import 'package:resume/widgets/resume_inherited.dart';
 import 'package:resume/widgets/text/hyperlink.dart';
 import 'package:resume/widgets/work_card.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -111,56 +113,81 @@ This project won silver medal at iCan 2020, a silver medal at Warsaw Invention S
         crossAxisAlignment: CrossAxisAlignment.end,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          ResumeInherited.of(context).isWeb ?
           RotatedBox(
             quarterTurns: 1,
             child: Text(
               jobModels[index].titleShort,
               style: const TextStyle(fontSize: 24),
-            ),
-          ),
+            )) : Text(
+            jobModels[index].titleShort,
+            style: const TextStyle(fontSize: 24),
+            )
         ],
       ),
     ).reversed.toList();
     List<Widget> pages =
         List.generate(jobModels.length, (index) => WorkCard(jobModels[index]));
 
-    return Column(
-      children: [
-        const Header(
-          accentText: '3. ',
-          text: 'Work',
-        ),
-        Expanded(
-          child: Row(
-            children: [
-              Flexible(
-                  flex: 1,
-                  fit: FlexFit.tight,
-                  child: Column(
-                    children: [
-                      Flexible(flex: 1,child: Container()),
-                      Flexible(
-                        flex: 3,
-                        child: VerticalTabBar(
-                          pageTabs,
-                          pageController
-                        ),
-                      ),
-                      Flexible(flex: 1,child: Container())
-                    ],
-                  )),
-              Flexible(
-                flex: 4,
-                child: PageView(
-                    controller: pageController,
-                    physics: const NeverScrollableScrollPhysics(),
-                    scrollDirection: Axis.vertical,
-                    children: pages),
-              ),
-            ],
+    if(ResumeInherited.of(context).isWeb) {
+      return Column(
+        children: [
+          const Header(
+            accentText: '3. ',
+            text: 'Work',
           ),
-        ),
-      ],
-    );
+          Expanded(
+            child: Row(
+              children: [
+                Flexible(
+                    flex: 1,
+                    fit: FlexFit.tight,
+                    child: Column(
+                      children: [
+                        Flexible(flex: 1, child: Container()),
+                        Flexible(
+                          flex: 3,
+                          child: VerticalTabBar(
+                              pageTabs,
+                              pageController
+                          ),
+                        ),
+                        Flexible(flex: 1, child: Container())
+                      ],
+                    )),
+                Flexible(
+                  flex: 4,
+                  child: PageView(
+                      controller: pageController,
+                      physics: const NeverScrollableScrollPhysics(),
+                      scrollDirection: Axis.vertical,
+                      children: pages),
+                ),
+              ],
+            ),
+          ),
+        ],
+      );
+    } else {
+      return Column(
+        children: [
+          const Header(
+            accentText: '3. ',
+            text: 'Work',
+          ),
+          HorizontalTabBar(
+              pageTabs,
+              pageController
+          ),
+          Expanded(
+            child: PageView(
+                controller: pageController,
+                physics: const NeverScrollableScrollPhysics(),
+                scrollDirection: Axis.horizontal,
+                children: pages),
+          ),
+        ],
+      );
+    }
   }
 }

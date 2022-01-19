@@ -1,39 +1,62 @@
 import 'package:flutter/material.dart';
-import 'package:resume/pages/base_page.dart';
+import 'package:resume/widgets/image_with_outlined_shadow.dart';
+import 'package:resume/widgets/resume_inherited.dart';
 import 'package:resume/widgets/text/about_text.dart';
 import 'package:resume/widgets/header.dart';
-import 'package:resume/widgets/text/title_text.dart';
 
 class AboutPage extends StatelessWidget {
   const AboutPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return BasePage(mainModule: const [
-      Header(
-        accentText: '1. ',
-        text: 'About me',
-      ),
-      Padding(padding: EdgeInsets.only(top: 20), child: AboutText()),
-    ], secondaryModule: [
-      Stack(
+    if(ResumeInherited.of(context).isWeb) {
+      return Row(
         children: [
-          Padding(
-            padding: const EdgeInsets.only(top: 40, left: 40),
-            child: Container(
-              width: 400,
-              height: 400,
-              decoration: BoxDecoration(
-                border: Border.all(
-                  color: Theme.of(context).splashColor,
-                  width: 1,
+          Flexible(
+            flex: 3,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: const [
+                Header(
+                  accentText: '1. ',
+                  text: 'About me',
                 ),
-              ),
+                Padding(padding: EdgeInsets.only(top: 20), child: AboutText()),
+              ],
             ),
           ),
-          Image.asset('assets/face.jpg'),
+          Flexible(
+            flex: 2,
+            fit: FlexFit.tight,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const [
+                ImageWithOutlinedShadow()
+              ],
+            ),
+          )
         ],
-      )
-    ]);
+      );
+    } else {
+      return Row(
+        children: [
+          Expanded(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: const [
+                Header(
+                  accentText: '1. ',
+                  text: 'About me',
+                ),
+                Padding(padding: EdgeInsets.only(top: 20), child: AboutText()),
+                ImageWithOutlinedShadow()
+              ],
+            ),
+          ),
+        ],
+      );
+    }
   }
 }

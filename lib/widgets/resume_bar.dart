@@ -1,12 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:resume/widgets/page_view/top_bar_tap.dart';
-import 'package:resume/widgets/page_view/top_bar_tap.dart';
-import 'package:resume/widgets/page_view/top_bar_tap.dart';
-import 'package:resume/widgets/page_view/top_bar_tap.dart';
-import 'package:resume/widgets/page_view/top_bar_tap.dart';
 import 'package:resume/widgets/resume_button.dart';
-import 'package:resume/widgets/text/title_text.dart';
 
 class ResumeBar extends StatelessWidget {
   const ResumeBar({Key? key}) : super(key: key);
