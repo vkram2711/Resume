@@ -48,7 +48,7 @@ class AboutPage extends StatelessWidget {
                   text: 'About me',
                 ),
                 Padding(padding: EdgeInsets.only(top: 20), child: AboutText()),
-                Center(child: Padding(padding: EdgeInsets.only(top: 20),child: ImageWithOutlinedShadow()))
+                Center(child: Padding(padding: EdgeInsets.only(top: 20),child: ImageWithOutlinedShadow(height: 100, width: 100,)))
               ],
             ),
           ),
