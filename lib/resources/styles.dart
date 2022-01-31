@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 TextStyle accentTextStyle(BuildContext context,
-    {double fontSize = 24, bool underline = false}) {
+    {double fontSize = 20, bool underline = false}) {
   return TextStyle(
       color: Theme.of(context).splashColor,
       fontSize: fontSize,
@@ -9,7 +9,7 @@ TextStyle accentTextStyle(BuildContext context,
 }
 
 TextStyle secondaryAccentTextStyle(BuildContext context,
-    {double fontSize = 24, bool underline = false}) {
+    {double fontSize = 20, bool underline = false}) {
   return TextStyle(
       color: Theme.of(context).secondaryHeaderColor,
       fontSize: fontSize,
@@ -17,7 +17,7 @@ TextStyle secondaryAccentTextStyle(BuildContext context,
 }
 
 TextStyle primaryTextStyle(BuildContext context,
-    {double fontSize = 24, bool underline = false}) {
+    {double fontSize = 20, bool underline = false}) {
   return TextStyle(
       color: Theme.of(context).primaryColor,
       fontSize: fontSize,

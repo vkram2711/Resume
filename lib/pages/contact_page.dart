@@ -16,11 +16,11 @@ class ContactPage extends StatelessWidget{
         const AccentText('Send me a message!', fontSize: 72,),
         const Padding(
           padding: EdgeInsets.all(4.0),
-          child: PrimaryText('Do you have a proposition or want to discuss something?'),
+          child: PrimaryText('Do you have a proposition or want to discuss something?', textAlign: TextAlign.center,),
         ),
         const Padding(
           padding: EdgeInsets.all(8.0),
-          child: PrimaryText('Do not hesitate to contact me!'),
+          child: PrimaryText('Do not hesitate to contact me!', textAlign: TextAlign.center,),
         ),
 
         Padding(

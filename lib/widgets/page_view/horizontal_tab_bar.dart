@@ -7,6 +7,7 @@ class HorizontalTabBarState extends State<HorizontalTabBar> with TickerProviderS
 
     return TabBar(
       tabs: widget.tabs,
+      isScrollable: true,
       controller: tabController,
       onTap: (index){
         widget.pageController.animateToPage(widget.tabs.length -1 - index, duration: const Duration(milliseconds: 500), curve: Curves.easeIn);

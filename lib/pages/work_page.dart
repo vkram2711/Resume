@@ -42,7 +42,7 @@ class WorkPage extends StatelessWidget {
         ]),
         position: 'Flutter Developer',
         description: TextSpan(
-          text: '''• Worked on features implementing into app 
+          text: '''• Worked on features implementing into the app 
 • Covered app with integration tests 
 • Managed team of 3 devs''',
           style: primaryTextStyle(context),
@@ -91,7 +91,7 @@ This project won silver medal at iCan 2020, a silver medal at Warsaw Invention S
       ),
       JobModel(
         mainImage: 'assets/bond.png',
-        titleShort: 'Bond Film Platform',
+        titleShort: 'Bond',
         title: TextSpan(
           text: 'Bond Film Platform',
           style: accentTextStyle(context, fontSize: 36),

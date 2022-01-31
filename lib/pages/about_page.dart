@@ -10,32 +10,29 @@ class AboutPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if(ResumeInherited.of(context).isWeb) {
-      return Row(
+      return Column(
         children: [
-          Flexible(
-            flex: 3,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
-                Header(
-                  accentText: '1. ',
-                  text: 'About me',
-                ),
-                Padding(padding: EdgeInsets.only(top: 20), child: AboutText()),
-              ],
-            ),
+          const Header(
+            accentText: '1. ',
+            text: 'About me',
           ),
-          Flexible(
-            flex: 2,
-            fit: FlexFit.tight,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
-                ImageWithOutlinedShadow()
-              ],
-            ),
-          )
+          Row(
+            children: const [
+              Flexible(
+                flex: 1,
+                fit: FlexFit.tight,
+                child: AboutText(),
+              ),
+              Flexible(
+                flex: 2,
+                fit: FlexFit.tight,
+                child: Padding(
+                  padding: EdgeInsets.only(top: 60),
+                  child: Align(alignment: Alignment.center, child: ImageWithOutlinedShadow()),
+                ),
+              )
+            ],
+          ),
         ],
       );
     } else {
@@ -51,7 +48,7 @@ class AboutPage extends StatelessWidget {
                   text: 'About me',
                 ),
                 Padding(padding: EdgeInsets.only(top: 20), child: AboutText()),
-                ImageWithOutlinedShadow()
+                Center(child: Padding(padding: EdgeInsets.only(top: 20),child: ImageWithOutlinedShadow()))
               ],
             ),
           ),
