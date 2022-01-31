@@ -10,8 +10,8 @@ class ImageWithOutlinedShadow extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.only(top: 40, left: 40),
           child: Container(
-            width: 400,
-            height: 400,
+            width: 300,
+            height: 300,
             decoration: BoxDecoration(
               border: Border.all(
                 color: Theme.of(context).splashColor,
@@ -20,7 +20,7 @@ class ImageWithOutlinedShadow extends StatelessWidget {
             ),
           ),
         ),
-        Image.asset('assets/face.jpg'),
+        Image.asset('assets/face.jpg', width: 300, height: 300,),
       ],
     );
   }

@@ -19,12 +19,12 @@ class AboutPage extends StatelessWidget {
           Row(
             children: const [
               Flexible(
-                flex: 1,
+                flex: 2,
                 fit: FlexFit.tight,
                 child: AboutText(),
               ),
               Flexible(
-                flex: 2,
+                flex: 1,
                 fit: FlexFit.tight,
                 child: Padding(
                   padding: EdgeInsets.only(top: 60),
