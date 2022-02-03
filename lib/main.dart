@@ -22,7 +22,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
@@ -38,7 +37,7 @@ class MyApp extends StatelessWidget {
             if(constraints.maxWidth > 1050) {
               return const WebScreen();
             } else {
-              return const MobileScreen();
+              return MobileScreen(constraints.maxHeight);
             }
           },
         )
