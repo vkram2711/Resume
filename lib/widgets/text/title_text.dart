@@ -12,19 +12,16 @@ class TitleText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
-      child: RichText(
-        text: TextSpan(
-          children: [
-            TextSpan(
-                text: accentText,
-                style: accentTextStyle(context, fontSize: fontSize)),
-            TextSpan(
-                text: titleText,
-                style: primaryTextStyle(context, fontSize: fontSize),),
-          ],
-        ),
+    return RichText(
+      text: TextSpan(
+        children: [
+          TextSpan(
+              text: accentText,
+              style: accentTextStyle(context, fontSize: fontSize)),
+          TextSpan(
+              text: titleText,
+              style: primaryTextStyle(context, fontSize: fontSize),),
+        ],
       ),
     );
   }

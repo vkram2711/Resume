@@ -40,7 +40,6 @@ class AboutPage extends StatelessWidget {
         children: [
           Expanded(
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: const [
                 Header(
@@ -48,7 +47,7 @@ class AboutPage extends StatelessWidget {
                   text: 'About me',
                 ),
                 Padding(padding: EdgeInsets.only(top: 20), child: AboutText()),
-                Center(child: Padding(padding: EdgeInsets.only(top: 20),child: ImageWithOutlinedShadow(height: 100, width: 100,)))
+                Center(child: Padding(padding: EdgeInsets.only(top: 20),child: ImageWithOutlinedShadow(height: 150, width: 150,)))
               ],
             ),
           ),

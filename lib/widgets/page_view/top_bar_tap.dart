@@ -7,7 +7,7 @@ class TopBarTab extends StatelessWidget {
   final int page;
   final String primaryText;
 
-  const TopBarTab(this.primaryText,this.page, {Key? key}) : super(key: key);
+  const TopBarTab(this.primaryText, this.page, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,9 @@ class TopBarTab extends StatelessWidget {
         ResumeInherited.of(context).pageController.animateToPage(page,
             duration: const Duration(milliseconds: 400), curve: Curves.linear);
       },
-      child: TitleText('$page. ', primaryText),
+      child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: TitleText('$page. ', primaryText)),
     );
   }
 }
