@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:resume/widgets/text/title_text.dart';
 
-import '../resume_inherited.dart';
+import '../inherited/resume_inherited.dart';
 
 class TopBarTab extends StatelessWidget {
   final int page;

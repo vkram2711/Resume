@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:resume/widgets/page_view/top_bar_tap.dart';
+import 'package:resume/widgets/inherited/upwork_inherited.dart';
+import 'package:resume/widgets/page_view/top_bar_tab.dart';
 import 'package:resume/widgets/resume_button.dart';
 
 class ResumeBar extends StatelessWidget {
@@ -17,7 +18,7 @@ class ResumeBar extends StatelessWidget {
           const TopBarTab('Portfolio', 2),
           const TopBarTab('Work', 3),
           const TopBarTab('Achievements', 4),
-          const TopBarTab('Contact', 5),
+          if(!UpworkInherited.of(context).upworkMode) const TopBarTab('Contact', 5),
 
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),

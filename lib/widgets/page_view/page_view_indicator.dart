@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:resume/widgets/resume_inherited.dart';
+import 'package:resume/widgets/inherited/resume_inherited.dart';
 
 class Rotation45Degree extends StatelessWidget {
   final Widget child;
