@@ -9,7 +9,9 @@ import 'package:resume/pages/work_page.dart';
 import 'package:resume/web_screen.dart';
 import 'package:resume/widgets/page_view/page_view_indicator.dart';
 import 'package:resume/widgets/resume_bar.dart';
-import 'package:resume/widgets/resume_inherited.dart';
+import 'package:resume/widgets/inherited/resume_inherited.dart';
+
+import 'app_body.dart';
 
 //TODO: achievements, git, change top bar, listview generate
 void main() {
@@ -21,8 +23,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
+    final controller = PageController(initialPage: 0);
+    bool upworkMode;
     return MaterialApp(
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const AppBody(false),
+        '/u': (context) => const AppBody(true),
+      },
       title: 'Flutter Demo',
       theme: ThemeData(
           fontFamily: 'ProximaNova',
@@ -30,18 +38,6 @@ class MyApp extends StatelessWidget {
           splashColor: Colors.yellow[600],
           secondaryHeaderColor: Colors.white,
           primaryColor: Colors.grey[400]),
-      home: Scaffold(
-        backgroundColor: Colors.black,
-        body: LayoutBuilder(
-          builder: (BuildContext context, BoxConstraints constraints) {
-            if(constraints.maxWidth > 1050) {
-              return const WebScreen();
-            } else {
-              return MobileScreen(constraints.maxHeight);
-            }
-          },
-        )
-      ),
     );
   }
 }

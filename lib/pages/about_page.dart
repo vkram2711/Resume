@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:resume/widgets/image_with_outlined_shadow.dart';
-import 'package:resume/widgets/resume_inherited.dart';
+import 'package:resume/widgets/inherited/resume_inherited.dart';
 import 'package:resume/widgets/text/about_text.dart';
 import 'package:resume/widgets/header.dart';
 

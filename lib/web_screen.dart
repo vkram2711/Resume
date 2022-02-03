@@ -5,9 +5,10 @@ import 'package:resume/pages/contact_page.dart';
 import 'package:resume/pages/intro_page.dart';
 import 'package:resume/pages/portfolio_page.dart';
 import 'package:resume/pages/work_page.dart';
+import 'package:resume/widgets/inherited/upwork_inherited.dart';
 import 'package:resume/widgets/page_view/page_view_indicator.dart';
 import 'package:resume/widgets/resume_bar.dart';
-import 'package:resume/widgets/resume_inherited.dart';
+import 'package:resume/widgets/inherited/resume_inherited.dart';
 
 class WebScreen extends StatelessWidget {
   const WebScreen({Key? key}) : super(key: key);
@@ -15,13 +16,13 @@ class WebScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = PageController(initialPage: 0);
-    const pages = [
-      IntroPage(),
-      AboutPage(),
-      PortfolioPage(),
-      WorkPage(),
-      AchievementsPage(),
-      ContactPage()
+    final pages = [
+      const IntroPage(),
+      const AboutPage(),
+      const PortfolioPage(),
+      const WorkPage(),
+      const AchievementsPage(),
+      if(!UpworkInherited.of(context).upworkMode) const ContactPage()
     ];
 
     return ResumeInherited(

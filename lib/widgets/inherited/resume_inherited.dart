@@ -15,5 +15,6 @@ class ResumeInherited extends InheritedWidget {
 
   @override
   bool updateShouldNotify(ResumeInherited oldWidget) =>
-      oldWidget.pageController != pageController;
+      oldWidget.pageController != pageController &&
+      oldWidget.isWeb != isWeb;
 }
