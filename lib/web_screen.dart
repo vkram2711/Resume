@@ -21,7 +21,7 @@ class WebScreen extends StatelessWidget {
       const IntroPage(),
       const AboutPage(),
       const PortfolioPage(),
-      const WorkPage(),
+      WorkPage(),
       const AchievementsPage(),
       if(!UpworkInherited.of(context).upworkMode) const ContactPage()
     ];
@@ -46,7 +46,6 @@ class WebScreen extends StatelessWidget {
                   fit: FlexFit.tight,
                   flex: 8,
                   child: PageView(
-                      key: const PageStorageKey<String>('MainPageList'),
                       controller: controller,
                       scrollDirection: Axis.vertical,
                       children: pages),

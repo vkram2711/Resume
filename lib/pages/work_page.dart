@@ -12,12 +12,15 @@ import 'package:resume/widgets/text/hyperlink.dart';
 import 'package:resume/widgets/work_card.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+int currentJob = 0;
+
 class WorkPage extends StatelessWidget {
-  const WorkPage({Key? key}) : super(key: key);
+  final PageController pageController = PageController();
+
+  WorkPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    PageController pageController = PageController();
     final List<JobModel> jobModels = [
       JobModel(
         mainImage: 'assets/fittrack.png',
@@ -125,7 +128,10 @@ This project won silver medal at iCan 2020, a silver medal at Warsaw Invention S
             )
         ],
       ),
-    ).reversed.toList();
+    );
+
+    if(ResumeInherited.of(context).isWeb) pageTabs = pageTabs.reversed.toList();
+
     List<Widget> pages =
         List.generate(jobModels.length, (index) => WorkCard(jobModels[index]));
 
@@ -181,6 +187,7 @@ This project won silver medal at iCan 2020, a silver medal at Warsaw Invention S
           ),
           Expanded(
             child: PageView(
+                key: const PageStorageKey<String>('WorkPages'),
                 controller: pageController,
                 physics: const NeverScrollableScrollPhysics(),
                 scrollDirection: Axis.horizontal,

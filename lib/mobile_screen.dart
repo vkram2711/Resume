@@ -18,7 +18,7 @@ class MobileScreen extends StatelessWidget {
       const SizedBox(height: 605,child: IntroPage()),
       const SizedBox(height: 605,child: AboutPage()),
       const SizedBox(height: 605,child: PortfolioPage()),
-      const SizedBox(height: 605,child: WorkPage()),
+      SizedBox(height: 605,child: WorkPage()),
       const SizedBox(height: 605,child: AchievementsPage()),
       if(UpworkInherited.of(context).upworkMode) const SizedBox(height: 605,child: ContactPage())
     ];
@@ -30,7 +30,6 @@ class MobileScreen extends StatelessWidget {
         children: [
           Expanded(
             child: ListView(
-                key: const PageStorageKey<String>('MainPageList'),
                 scrollDirection: Axis.vertical,
                 children: pages),
           )

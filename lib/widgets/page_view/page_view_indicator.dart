@@ -26,8 +26,6 @@ class Indicator extends AnimatedWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(pageController.page);
-
     double pagePosition =
         pageController.page ?? pageController.initialPage as double;
     double selectedness = Curves.easeOut.transform(
