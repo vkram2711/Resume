@@ -23,8 +23,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = PageController(initialPage: 0);
-    bool upworkMode;
     return MaterialApp(
       initialRoute: '/',
       routes: {

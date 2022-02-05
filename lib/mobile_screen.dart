@@ -14,7 +14,6 @@ class MobileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = PageController(initialPage: 0);
     final pages = [
       const SizedBox(height: 605,child: IntroPage()),
       const SizedBox(height: 605,child: AboutPage()),
@@ -25,12 +24,13 @@ class MobileScreen extends StatelessWidget {
     ];
 
     return ResumeInherited(
-      pageController: controller,
+      pageController: null,
       isWeb: false,
       child: Column(
         children: [
           Expanded(
             child: ListView(
+                key: const PageStorageKey<String>('MainPageList'),
                 scrollDirection: Axis.vertical,
                 children: pages),
           )

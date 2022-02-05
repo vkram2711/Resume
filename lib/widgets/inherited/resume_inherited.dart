@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ResumeInherited extends InheritedWidget {
-  final PageController pageController;
+  final PageController? pageController;
   final bool isWeb;
 
   const ResumeInherited({Key? key, required this.pageController, required this.isWeb, required Widget child})

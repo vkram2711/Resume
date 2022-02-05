@@ -4,6 +4,8 @@ import 'package:resume/widgets/inherited/upwork_inherited.dart';
 
 import 'mobile_screen.dart';
 
+final bucketGlobal = PageStorageBucket();
+
 class AppBody extends StatelessWidget {
   final bool upworkMode;
 
@@ -15,14 +17,17 @@ class AppBody extends StatelessWidget {
       upworkMode: upworkMode,
       child: Scaffold(
           backgroundColor: Colors.black,
-          body: LayoutBuilder(
-            builder: (BuildContext context, BoxConstraints constraints) {
-              if(constraints.maxWidth > 1050) {
-                return const WebScreen();
-              } else {
-                return MobileScreen(constraints.maxHeight);
-              }
-            },
+          body: PageStorage(
+            bucket: bucketGlobal,
+            child: LayoutBuilder(
+              builder: (BuildContext context, BoxConstraints constraints) {
+                if(constraints.maxWidth > 1050) {
+                  return WebScreen();
+                } else {
+                  return MobileScreen(constraints.maxHeight);
+                }
+              },
+            ),
           )
       ),
     );

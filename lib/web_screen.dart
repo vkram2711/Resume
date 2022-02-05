@@ -11,11 +11,12 @@ import 'package:resume/widgets/resume_bar.dart';
 import 'package:resume/widgets/inherited/resume_inherited.dart';
 
 class WebScreen extends StatelessWidget {
-  const WebScreen({Key? key}) : super(key: key);
+  final controller = PageController(initialPage: 0);
+
+  WebScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final controller = PageController(initialPage: 0);
     final pages = [
       const IntroPage(),
       const AboutPage(),
@@ -45,6 +46,7 @@ class WebScreen extends StatelessWidget {
                   fit: FlexFit.tight,
                   flex: 8,
                   child: PageView(
+                      key: const PageStorageKey<String>('MainPageList'),
                       controller: controller,
                       scrollDirection: Axis.vertical,
                       children: pages),
