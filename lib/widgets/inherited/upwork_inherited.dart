@@ -7,7 +7,7 @@ class UpworkInherited extends InheritedWidget {
 
   static UpworkInherited of(BuildContext context){
     final result = context.dependOnInheritedWidgetOfExactType<UpworkInherited>();
-    assert(result != null, 'No ResumeInherited found in context');
+    assert(result != null, 'No UpworkInherited found in context');
     return result!;
   }
 

@@ -26,8 +26,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       initialRoute: '/',
       routes: {
-        '/': (context) => const AppBody(false),
-        '/u': (context) => const AppBody(true),
+        '/': (context) => AppBody(false),
+        '/u': (context) => AppBody(true),
       },
       title: 'Flutter Demo',
       theme: ThemeData(
