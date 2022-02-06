@@ -12,12 +12,12 @@ import 'package:resume/widgets/work_card.dart';
 int currentJob = 0;
 
 class WorkPage extends StatelessWidget {
-  final PageController pageController = PageController();
 
   WorkPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+
     final List<JobModel> jobModels = [
       JobModel(
         mainImage: 'assets/fittrack.png',
@@ -127,7 +127,10 @@ This project won silver medal at iCan 2020, a silver medal at Warsaw Invention S
       ),
     );
 
+    print('workpage current ${currentJob}');
+
     if(ResumeInherited.of(context).isWeb) pageTabs = pageTabs.reversed.toList();
+    final PageController pageController = PageController(initialPage: currentJob);
 
     List<Widget> pages =
         List.generate(jobModels.length, (index) => WorkCard(jobModels[index]));
@@ -184,7 +187,6 @@ This project won silver medal at iCan 2020, a silver medal at Warsaw Invention S
           ),
           Expanded(
             child: PageView(
-                key: const PageStorageKey<String>('WorkPages'),
                 controller: pageController,
                 physics: const NeverScrollableScrollPhysics(),
                 scrollDirection: Axis.horizontal,
