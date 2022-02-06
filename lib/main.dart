@@ -1,16 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:resume/mobile_screen.dart';
-import 'package:resume/pages/about_page.dart';
-import 'package:resume/pages/achievements_page.dart';
-import 'package:resume/pages/contact_page.dart';
-import 'package:resume/pages/portfolio_page.dart';
-import 'package:resume/pages/intro_page.dart';
-import 'package:resume/pages/work_page.dart';
-import 'package:resume/web_screen.dart';
-import 'package:resume/widgets/page_view/page_view_indicator.dart';
-import 'package:resume/widgets/resume_bar.dart';
-import 'package:resume/widgets/inherited/resume_inherited.dart';
-
 import 'app_body.dart';
 
 //TODO: achievements, git, change top bar, listview generate
@@ -23,8 +11,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = PageController(initialPage: 0);
-    bool upworkMode;
     return MaterialApp(
       initialRoute: '/',
       routes: {

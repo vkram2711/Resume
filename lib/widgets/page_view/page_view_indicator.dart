@@ -99,7 +99,7 @@ class PageViewIndicator extends StatelessWidget {
   Widget build(BuildContext context) {
     List<Widget> indicators = [];
     for (int i = 0; i < numberOfPages; i++) {
-      indicators.add(Indicator(i, ResumeInherited.of(context).pageController));
+      indicators.add(Indicator(i, ResumeInherited.of(context).pageController!));
       if (i + 1 < numberOfPages) {
         indicators.add(const VerticalLine(height: 40));
       }

@@ -8,29 +8,63 @@ import 'package:resume/pages/work_page.dart';
 import 'package:resume/widgets/inherited/resume_inherited.dart';
 import 'package:resume/widgets/inherited/upwork_inherited.dart';
 
-class MobileScreen extends StatelessWidget {
-  final double maxHeight;
-  const MobileScreen(this.maxHeight, {Key? key}) : super(key: key);
+class MobileScreen extends StatefulWidget {
+  late ScrollController scrollController;
+  late double maxHeight;
+  final Function updatePage;
+
+  //for some reason flutter want it like this or will throw callback for "ext.flutter.inspector.getRootWidgetSummaryTree"
+  MobileScreen(double page, double maxHeight, this.updatePage, {Key? key})
+      : super(key: key) {
+    this.maxHeight = maxHeight > 605 ? maxHeight : 605;
+    scrollController =
+        ScrollController(initialScrollOffset: page * this.maxHeight);
+  }
+
+  /*
+  MobileScreen(double page, double maxHeight, {Key? key}) :
+    maxHeight = maxHeight > 605? maxHeight : 605,
+    scrollController = ScrollController(initialScrollOffset: page * maxHeight > 605? maxHeight : 605),
+    super(key: key);
+  */
 
   @override
+  State<MobileScreen> createState() => _MobileScreenState();
+}
+
+class _MobileScreenState extends State<MobileScreen> {
+  /* @override
+  void initState() {
+    widget.scrollController.addListener(() {
+      widget.updatePage(widget.scrollController.offset/widget.maxHeight);
+    });
+    return super.initState();
+  }*/
+  //Also if I will add removeListener in dispose or move listener to init state it will throw: callback for "ext.flutter.inspector.getRootWidgetSummaryTree"
+  @override
   Widget build(BuildContext context) {
-    final controller = PageController(initialPage: 0);
     final pages = [
-      const SizedBox(height: 605,child: IntroPage()),
-      const SizedBox(height: 605,child: AboutPage()),
-      const SizedBox(height: 605,child: PortfolioPage()),
-      const SizedBox(height: 605,child: WorkPage()),
-      const SizedBox(height: 605,child: AchievementsPage()),
-      if(UpworkInherited.of(context).upworkMode) const SizedBox(height: 605,child: ContactPage())
+      SizedBox(height: widget.maxHeight, child: const IntroPage()),
+      SizedBox(height: widget.maxHeight, child: const AboutPage()),
+      SizedBox(height: widget.maxHeight, child: const PortfolioPage()),
+      SizedBox(height: widget.maxHeight, child: WorkPage()),
+      SizedBox(height: widget.maxHeight, child: const AchievementsPage()),
+      if (!UpworkInherited.of(context).upworkMode)
+        SizedBox(height: widget.maxHeight, child: const ContactPage())
     ];
 
+    widget.scrollController.addListener(() {
+      widget.updatePage(widget.scrollController.offset / widget.maxHeight);
+    });
+
     return ResumeInherited(
-      pageController: controller,
+      pageController: null,
       isWeb: false,
       child: Column(
         children: [
           Expanded(
             child: ListView(
+                controller: widget.scrollController,
                 scrollDirection: Axis.vertical,
                 children: pages),
           )
@@ -38,4 +72,10 @@ class MobileScreen extends StatelessWidget {
       ),
     );
   }
+
+/* @override
+  void dispose() {
+    widget.scrollController.removeListener(() { });
+    return super.dispose();
+  }*/
 }

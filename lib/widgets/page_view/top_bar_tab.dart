@@ -13,7 +13,7 @@ class TopBarTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        ResumeInherited.of(context).pageController.animateToPage(page,
+        ResumeInherited.of(context).pageController!.animateToPage(page,
             duration: const Duration(milliseconds: 400), curve: Curves.linear);
       },
       child: Padding(
