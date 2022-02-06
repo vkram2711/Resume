@@ -5,16 +5,17 @@ import 'package:resume/pages/contact_page.dart';
 import 'package:resume/pages/intro_page.dart';
 import 'package:resume/pages/portfolio_page.dart';
 import 'package:resume/pages/work_page.dart';
-import 'package:resume/widgets/inherited/page_inherited.dart';
 import 'package:resume/widgets/inherited/resume_inherited.dart';
 import 'package:resume/widgets/inherited/upwork_inherited.dart';
 
 class MobileScreen extends StatefulWidget {
   late ScrollController scrollController;
   late double maxHeight;
+  final Function updatePage;
 
   //for some reason flutter want it like this or will throw callback for "ext.flutter.inspector.getRootWidgetSummaryTree"
-  MobileScreen(double page, double maxHeight, {Key? key}) : super(key: key) {
+  MobileScreen(double page, double maxHeight, this.updatePage, {Key? key})
+      : super(key: key) {
     this.maxHeight = maxHeight > 605 ? maxHeight : 605;
     scrollController =
         ScrollController(initialScrollOffset: page * this.maxHeight);
@@ -32,13 +33,13 @@ class MobileScreen extends StatefulWidget {
 }
 
 class _MobileScreenState extends State<MobileScreen> {
-  @override
+  /* @override
   void initState() {
     widget.scrollController.addListener(() {
-      PageInherited.of(context).currentPage = widget.scrollController.offset/widget.maxHeight;
+      widget.updatePage(widget.scrollController.offset/widget.maxHeight);
     });
     return super.initState();
-  }
+  }*/
   //Also if I will add removeListener in dispose or move listener to init state it will throw: callback for "ext.flutter.inspector.getRootWidgetSummaryTree"
   @override
   Widget build(BuildContext context) {
@@ -53,8 +54,7 @@ class _MobileScreenState extends State<MobileScreen> {
     ];
 
     widget.scrollController.addListener(() {
-      PageInherited.of(context).currentPage =
-          widget.scrollController.offset / widget.maxHeight;
+      widget.updatePage(widget.scrollController.offset / widget.maxHeight);
     });
 
     return ResumeInherited(
