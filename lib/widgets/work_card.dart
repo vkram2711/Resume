@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:resume/models/job_model.dart';
 import 'package:resume/widgets/company_logo.dart';
+import 'package:resume/widgets/inherited/resume_inherited.dart';
 import 'package:resume/widgets/skill_badge.dart';
 import 'package:resume/widgets/text/primary_text.dart';
 import 'package:resume/widgets/text/secondary_header_text.dart';
@@ -13,9 +14,12 @@ class WorkCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<Widget> skills = [];
-    for (int i = 0; i < jobModel.skills.length; i++) {
-      skills.add(SkillBadge(jobModel.skills[i]));
+    if(ResumeInherited.of(context).isWeb) {
+      for (int i = 0; i < jobModel.skills.length; i++) {
+        skills.add(SkillBadge(jobModel.skills[i]));
+      }
     }
+
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
