@@ -1,16 +1,13 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:resume/models/job_model.dart';
 import 'package:resume/resources/styles.dart';
 
 import 'package:resume/widgets/header.dart';
 import 'package:resume/widgets/page_view/horizontal_tab_bar.dart';
-import 'package:resume/widgets/page_view/vertical_page_tabs.dart';
 import 'package:resume/widgets/page_view/vertical_tab_bar.dart';
 import 'package:resume/widgets/inherited/resume_inherited.dart';
 import 'package:resume/widgets/text/hyperlink.dart';
 import 'package:resume/widgets/work_card.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 int currentJob = 0;
 
