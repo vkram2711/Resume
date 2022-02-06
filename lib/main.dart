@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         '/': (context) => const AppBody(false),
         '/u': (context) => const AppBody(true),
       },
-      title: 'Flutter Demo',
+      title: 'Vladyslav Kramarenko',
       theme: ThemeData(
           fontFamily: 'ProximaNova',
           backgroundColor: Colors.black,
