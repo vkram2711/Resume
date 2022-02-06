@@ -127,8 +127,6 @@ This project won silver medal at iCan 2020, a silver medal at Warsaw Invention S
       ),
     );
 
-    print('workpage current ${currentJob}');
-
     if(ResumeInherited.of(context).isWeb) pageTabs = pageTabs.reversed.toList();
     final PageController pageController = PageController(initialPage: currentJob);
 

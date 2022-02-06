@@ -10,7 +10,6 @@ class HorizontalTabBarState extends State<HorizontalTabBar>
         length: widget.tabs.length,
         vsync: this);
     tabController.addListener(() {
-      print('horizontal current ${currentJob} index ${tabController.index}');
 
       currentJob = tabController.index;
     });

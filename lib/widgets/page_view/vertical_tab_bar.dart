@@ -11,7 +11,6 @@ class VerticalTabBarState extends State<VerticalTabBar>
         length: widget.tabs.length,
         vsync: this);
     tabController.addListener(() {
-      print('vertical current ${currentJob} index ${tabController.index}');
       currentJob =  widget.tabs.length - 1 - tabController.index;
     });
 
