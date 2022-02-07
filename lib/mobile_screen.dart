@@ -11,7 +11,7 @@ import 'package:resume/widgets/inherited/upwork_inherited.dart';
 class MobileScreen extends StatefulWidget {
   late ScrollController scrollController;
   final Function updatePage;
-  final maxHeight = 660.0;
+  final maxHeight = 690.0;
   //for some reason flutter want it like this or will throw callback for "ext.flutter.inspector.getRootWidgetSummaryTree"
   MobileScreen(double page, double maxHeight, this.updatePage, {Key? key})
       : super(key: key) {
