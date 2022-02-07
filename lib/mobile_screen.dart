@@ -11,12 +11,12 @@ import 'package:resume/widgets/inherited/upwork_inherited.dart';
 class MobileScreen extends StatefulWidget {
   late ScrollController scrollController;
   final Function updatePage;
-
+  final maxHeight = 660.0;
   //for some reason flutter want it like this or will throw callback for "ext.flutter.inspector.getRootWidgetSummaryTree"
   MobileScreen(double page, double maxHeight, this.updatePage, {Key? key})
       : super(key: key) {
     //this.maxHeight = maxHeight > 605 ? maxHeight : 605;
-    scrollController = ScrollController(initialScrollOffset: page * 640);
+    scrollController = ScrollController(initialScrollOffset: page * maxHeight);
   }
 
   /*
@@ -42,25 +42,25 @@ class _MobileScreenState extends State<MobileScreen> {
   @override
   Widget build(BuildContext context) {
     final pages = [
-      const SizedBox(
-          height: 640,
-          child: Padding(padding: EdgeInsets.all(16), child: IntroPage())),
-      const SizedBox(
-          height: 640,
-          child: Padding(padding: EdgeInsets.all(16), child: AboutPage())),
+      SizedBox(
+          height: widget.maxHeight,
+          child: const Padding(padding: EdgeInsets.all(16), child: IntroPage())),
+      SizedBox(
+          height: widget.maxHeight,
+          child: const Padding(padding: EdgeInsets.all(16), child: AboutPage())),
       //SizedBox(height: widget.maxHeight, child: const Padding(padding: EdgeInsets.all(16), child: PortfolioPage())),
       SizedBox(
-          height: 640,
+          height: widget.maxHeight,
           child: Padding(padding: const EdgeInsets.all(16), child: WorkPage())),
       //SizedBox(height: widget.maxHeight, child: const Padding(padding: EdgeInsets.all(16), child: AchievementsPage())),
       if (!UpworkInherited.of(context).upworkMode)
-        const SizedBox(
-            height: 640,
-            child: Padding(padding: EdgeInsets.all(16), child: ContactPage()))
+        SizedBox(
+            height: widget.maxHeight,
+            child: const Padding(padding: EdgeInsets.all(16), child: ContactPage()))
     ];
 
     widget.scrollController.addListener(() {
-      widget.updatePage(widget.scrollController.offset / 640);
+      widget.updatePage(widget.scrollController.offset / widget.maxHeight);
     });
 
     return ResumeInherited(
