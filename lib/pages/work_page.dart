@@ -138,7 +138,7 @@ This project won silver medal at iCan 2020, a silver medal at Warsaw Invention S
       return Column(
         children: [
           const Header(
-            accentText: '3. ',
+            accentText: '2. ',
             text: 'Work',
           ),
           Expanded(
