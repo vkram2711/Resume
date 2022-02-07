@@ -44,11 +44,11 @@ class _MobileScreenState extends State<MobileScreen> {
   @override
   Widget build(BuildContext context) {
     final pages = [
-      SizedBox(height: widget.maxHeight, child: const IntroPage()),
-      SizedBox(height: widget.maxHeight, child: const AboutPage()),
-      SizedBox(height: widget.maxHeight, child: const PortfolioPage()),
-      SizedBox(height: widget.maxHeight, child: WorkPage()),
-      SizedBox(height: widget.maxHeight, child: const AchievementsPage()),
+      SizedBox(height: widget.maxHeight, child: const Padding(padding: EdgeInsets.all(16), child: IntroPage())),
+      SizedBox(height: widget.maxHeight, child: const Padding(padding: EdgeInsets.all(16), child: AboutPage())),
+      SizedBox(height: widget.maxHeight, child: const Padding(padding: EdgeInsets.all(16), child: PortfolioPage())),
+      SizedBox(height: widget.maxHeight, child: Padding(padding: const EdgeInsets.all(16), child: WorkPage())),
+      SizedBox(height: widget.maxHeight, child: const Padding(padding: EdgeInsets.all(16), child: AchievementsPage())),
       if (!UpworkInherited.of(context).upworkMode)
         SizedBox(height: widget.maxHeight, child: const ContactPage())
     ];

@@ -23,13 +23,18 @@ class ResumeBar extends StatelessWidget {
 
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: ResumeButton('Resume', () {
-              if(UpworkInherited.of(context).upworkMode) {
-                launch('https://drive.google.com/file/d/1Ry9AKSHTW7Ez7Fwur5t9x9WIZp1O4MGX/view?usp=sharing');
-              } else {
-                launch('https://drive.google.com/file/d/1p-o8TB5BxUbI1G_sSfbQFcDD3M5mXTtE/view?usp=sharing');
-              }
-            }),
+            child: ResumeButton(
+              'Resume',
+              () {
+                if (UpworkInherited.of(context).upworkMode) {
+                  launch(
+                      'https://drive.google.com/file/d/1Ry9AKSHTW7Ez7Fwur5t9x9WIZp1O4MGX/view?usp=sharing');
+                } else {
+                  launch(
+                      'https://drive.google.com/file/d/1p-o8TB5BxUbI1G_sSfbQFcDD3M5mXTtE/view?usp=sharing');
+                }
+              },
+            ),
           ),
         ],
       ),
