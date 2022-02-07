@@ -10,7 +10,10 @@ class UnderDevelopmentPage extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: const [
         Center(
-          child: AccentText('This part under development', fontSize: 64,),
+          child: AccentText(
+            'This part under development',
+            fontSize: 64,
+          ),
         )
       ],
     );

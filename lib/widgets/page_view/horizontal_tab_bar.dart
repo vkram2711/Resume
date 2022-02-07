@@ -6,11 +6,8 @@ class HorizontalTabBarState extends State<HorizontalTabBar>
   @override
   Widget build(BuildContext context) {
     TabController tabController = TabController(
-        initialIndex: currentJob,
-        length: widget.tabs.length,
-        vsync: this);
+        initialIndex: currentJob, length: widget.tabs.length, vsync: this);
     tabController.addListener(() {
-
       currentJob = tabController.index;
     });
 

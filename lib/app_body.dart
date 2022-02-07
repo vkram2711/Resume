@@ -4,7 +4,6 @@ import 'package:resume/widgets/inherited/upwork_inherited.dart';
 
 import 'mobile_screen.dart';
 
-
 class AppBody extends StatefulWidget {
   final bool upworkMode;
 
@@ -17,7 +16,7 @@ class AppBody extends StatefulWidget {
 class _AppBodyState extends State<AppBody> {
   double currentPage = 0;
 
-  void _updatePage(double newPage){
+  void _updatePage(double newPage) {
     currentPage = newPage;
   }
 
@@ -26,16 +25,17 @@ class _AppBodyState extends State<AppBody> {
     return UpworkInherited(
       upworkMode: widget.upworkMode,
       child: Scaffold(
-          backgroundColor: Colors.black,
-          body: LayoutBuilder(
-            builder: (BuildContext context, BoxConstraints constraints) {
-              if (constraints.maxWidth > 1050 && constraints.maxHeight > 625) {
-                return WebScreen(currentPage.toInt(), _updatePage);
-              } else {
-                return MobileScreen(currentPage, constraints.maxHeight, _updatePage);
-              }
-            },
-          ),
+        backgroundColor: Colors.black,
+        body: LayoutBuilder(
+          builder: (BuildContext context, BoxConstraints constraints) {
+            if (constraints.maxWidth > 1050 && constraints.maxHeight > 625) {
+              return WebScreen(currentPage.toInt(), _updatePage);
+            } else {
+              return MobileScreen(
+                  currentPage, constraints.maxHeight, _updatePage);
+            }
+          },
+        ),
       ),
     );
   }

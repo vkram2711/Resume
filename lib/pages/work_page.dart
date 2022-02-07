@@ -12,12 +12,10 @@ import 'package:resume/widgets/work_card.dart';
 int currentJob = 0;
 
 class WorkPage extends StatelessWidget {
-
   WorkPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-
     final List<JobModel> jobModels = [
       JobModel(
         mainImage: 'assets/fittrack.png',
@@ -113,27 +111,30 @@ This project won silver medal at iCan 2020, a silver medal at Warsaw Invention S
         crossAxisAlignment: CrossAxisAlignment.end,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          ResumeInherited.of(context).isWeb ?
-          RotatedBox(
-            quarterTurns: 1,
-            child: Text(
-              jobModels[index].titleShort,
-              style: const TextStyle(fontSize: 24),
-            )) : Text(
-            jobModels[index].titleShort,
-            style: const TextStyle(fontSize: 24),
-            )
+          ResumeInherited.of(context).isWeb
+              ? RotatedBox(
+                  quarterTurns: 1,
+                  child: Text(
+                    jobModels[index].titleShort,
+                    style: const TextStyle(fontSize: 24),
+                  ))
+              : Text(
+                  jobModels[index].titleShort,
+                  style: const TextStyle(fontSize: 24),
+                )
         ],
       ),
     );
 
-    if(ResumeInherited.of(context).isWeb) pageTabs = pageTabs.reversed.toList();
-    final PageController pageController = PageController(initialPage: currentJob);
+    if (ResumeInherited.of(context).isWeb)
+      pageTabs = pageTabs.reversed.toList();
+    final PageController pageController =
+        PageController(initialPage: currentJob);
 
     List<Widget> pages =
         List.generate(jobModels.length, (index) => WorkCard(jobModels[index]));
 
-    if(ResumeInherited.of(context).isWeb) {
+    if (ResumeInherited.of(context).isWeb) {
       return Column(
         children: [
           const Header(
@@ -151,10 +152,7 @@ This project won silver medal at iCan 2020, a silver medal at Warsaw Invention S
                         Flexible(flex: 1, child: Container()),
                         Flexible(
                           flex: 3,
-                          child: VerticalTabBar(
-                              pageTabs,
-                              pageController
-                          ),
+                          child: VerticalTabBar(pageTabs, pageController),
                         ),
                         Flexible(flex: 1, child: Container())
                       ],
@@ -179,10 +177,7 @@ This project won silver medal at iCan 2020, a silver medal at Warsaw Invention S
             accentText: '3. ',
             text: 'Work',
           ),
-          HorizontalTabBar(
-              pageTabs,
-              pageController
-          ),
+          HorizontalTabBar(pageTabs, pageController),
           Expanded(
             child: PageView(
                 controller: pageController,

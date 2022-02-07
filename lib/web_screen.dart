@@ -36,9 +36,9 @@ class _WebScreenState extends State<WebScreen> {
     final pages = [
       const IntroPage(),
       const AboutPage(),
-      const PortfolioPage(),
+      //const PortfolioPage(),
       WorkPage(),
-      const AchievementsPage(),
+      //const AchievementsPage(),
       if (!UpworkInherited.of(context).upworkMode) const ContactPage()
     ];
 
@@ -92,7 +92,7 @@ class _WebScreenState extends State<WebScreen> {
   }
 
   //this not triggers error for some weird reason
- @override
+  @override
   void dispose() {
     widget.controller.removeListener(() {});
     super.dispose();

@@ -92,8 +92,7 @@ class VerticalLine extends StatelessWidget {
 class PageViewIndicator extends StatelessWidget {
   final int numberOfPages;
 
-  const PageViewIndicator(this.numberOfPages, {Key? key})
-      : super(key: key);
+  const PageViewIndicator(this.numberOfPages, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
