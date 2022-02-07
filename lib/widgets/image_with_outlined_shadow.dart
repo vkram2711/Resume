@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:resume/widgets/inherited/resume_inherited.dart';
 
 class ImageWithOutlinedShadow extends StatelessWidget {
   final double width;
@@ -11,7 +12,7 @@ class ImageWithOutlinedShadow extends StatelessWidget {
     return Stack(
       children: [
         Padding(
-          padding: const EdgeInsets.only(top: 40, left: 40),
+          padding: ResumeInherited.of(context).isWeb ? const EdgeInsets.only(top: 40, left: 40) : const EdgeInsets.only(top: 15, left: 15),
           child: Container(
             width: width,
             height: height,

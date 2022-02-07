@@ -71,7 +71,7 @@ class WorkCard extends StatelessWidget {
             padding: const EdgeInsets.only(right: 32, top: 16),
             child: PrimaryText(jobModel.timeInterval),
           ),
-        )
+        ),
       ],
     );
   }

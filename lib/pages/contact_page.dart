@@ -13,20 +13,29 @@ class ContactPage extends StatelessWidget{
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const AccentText('Send me a message!', fontSize: 72,),
-        const Padding(
-          padding: EdgeInsets.all(4.0),
-          child: PrimaryText('Do you have a proposition or want to discuss something?', textAlign: TextAlign.center,),
+      const AccentText(
+        'Send me a message!',
+        fontSize: 72,
+        textAlign: TextAlign.center,
+      ),
+      const Padding(
+        padding: EdgeInsets.all(4.0),
+        child: PrimaryText(
+          'Do you have a proposition or want to discuss something?',
+          textAlign: TextAlign.center,
         ),
-        const Padding(
-          padding: EdgeInsets.all(8.0),
-          child: PrimaryText('Do not hesitate to contact me!', textAlign: TextAlign.center,),
+      ),
+      const Padding(
+        padding: EdgeInsets.all(8.0),
+        child: PrimaryText(
+          'Do not hesitate to contact me!',
+          textAlign: TextAlign.center,
         ),
-
-        Padding(
-          padding: const EdgeInsets.all(8.0),
+      ),
+      Padding(
+        padding: const EdgeInsets.all(8.0),
           child: ResumeButton('Contact me', (){
-            launch('mailto:vkramarenko2711@gmail.com?subject=Hello, Vlad');
+            launch('mailto:vkramarenko.at.work@gmail.com?subject=Hello, Vlad');
           }),
         )
       ]
