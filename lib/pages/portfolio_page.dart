@@ -6,6 +6,10 @@ class PortfolioPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const UnderDevelopmentPage();
+    return Column(
+      children: [
+        Container()
+      ],
+    );
   }
 }

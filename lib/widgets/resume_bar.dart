@@ -16,11 +16,11 @@ class ResumeBar extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
           const TopBarTab('About', 1),
-          const TopBarTab('Portfolio', 2),
-          const TopBarTab('Work', 3),
-          const TopBarTab('Achievements', 4),
+          //const TopBarTab('Portfolio', 2),
+          const TopBarTab('Work', 2),
+          //const TopBarTab('Achievements', 4),
           if (!UpworkInherited.of(context).upworkMode)
-            const TopBarTab('Contact', 5),
+            const TopBarTab('Contact', 3),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: ResumeButton(
