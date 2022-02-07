@@ -13,7 +13,7 @@ class WorkCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<Widget> skills = [];
-    if(ResumeInherited.of(context).isWeb) {
+    if (ResumeInherited.of(context).isWeb) {
       for (int i = 0; i < jobModel.skills.length; i++) {
         skills.add(SkillBadge(jobModel.skills[i]));
       }
@@ -55,16 +55,16 @@ class WorkCard extends StatelessWidget {
                       padding: const EdgeInsets.only(top: 8, bottom: 18),
                       child: SecondaryHeaderText(jobModel.position),
                     ),
-                    if(ResumeInherited.of(context).isWeb) RichText(text: jobModel.description),
+                    if (ResumeInherited.of(context).isWeb)
+                      RichText(text: jobModel.description),
                   ],
                 ),
               ),
             ),
-
           ],
         ),
-
-        if(!ResumeInherited.of(context).isWeb) RichText(text: jobModel.description),
+        if (!ResumeInherited.of(context).isWeb)
+          RichText(text: jobModel.description),
         Align(
           alignment: Alignment.bottomRight,
           child: Padding(

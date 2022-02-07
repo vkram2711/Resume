@@ -6,12 +6,11 @@ class VerticalTabBarState extends State<VerticalTabBar>
   @override
   Widget build(BuildContext context) {
     TabController tabController = TabController(
-        initialIndex:
-            widget.tabs.length - currentJob - 1,
+        initialIndex: widget.tabs.length - currentJob - 1,
         length: widget.tabs.length,
         vsync: this);
     tabController.addListener(() {
-      currentJob =  widget.tabs.length - 1 - tabController.index;
+      currentJob = widget.tabs.length - 1 - tabController.index;
     });
 
     return RotatedBox(

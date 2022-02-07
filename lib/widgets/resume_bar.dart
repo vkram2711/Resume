@@ -19,8 +19,8 @@ class ResumeBar extends StatelessWidget {
           const TopBarTab('Portfolio', 2),
           const TopBarTab('Work', 3),
           const TopBarTab('Achievements', 4),
-          if(!UpworkInherited.of(context).upworkMode) const TopBarTab('Contact', 5),
-
+          if (!UpworkInherited.of(context).upworkMode)
+            const TopBarTab('Contact', 5),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: ResumeButton(

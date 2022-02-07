@@ -19,7 +19,10 @@ class CompanyLogo extends StatelessWidget {
     return Stack(
       alignment: Alignment.bottomRight,
       children: [
-        Center(child: isMainSvg ? SvgPicture.asset(mainImage) : Image.asset(mainImage)),
+        Center(
+            child: isMainSvg
+                ? SvgPicture.asset(mainImage)
+                : Image.asset(mainImage)),
         secondaryProvided
             ? isSecondSvg
                 ? SvgPicture.asset(

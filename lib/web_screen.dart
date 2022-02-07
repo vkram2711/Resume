@@ -92,7 +92,7 @@ class _WebScreenState extends State<WebScreen> {
   }
 
   //this not triggers error for some weird reason
- @override
+  @override
   void dispose() {
     widget.controller.removeListener(() {});
     super.dispose();

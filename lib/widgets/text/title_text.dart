@@ -19,8 +19,9 @@ class TitleText extends StatelessWidget {
               text: accentText,
               style: accentTextStyle(context, fontSize: fontSize)),
           TextSpan(
-              text: titleText,
-              style: primaryTextStyle(context, fontSize: fontSize),),
+            text: titleText,
+            style: primaryTextStyle(context, fontSize: fontSize),
+          ),
         ],
       ),
     );

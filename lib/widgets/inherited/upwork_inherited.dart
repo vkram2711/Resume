@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 
 class UpworkInherited extends InheritedWidget {
   final bool upworkMode;
-  const UpworkInherited({Key? key, required this.upworkMode, required Widget child})
+  const UpworkInherited(
+      {Key? key, required this.upworkMode, required Widget child})
       : super(key: key, child: child);
 
-  static UpworkInherited of(BuildContext context){
-    final result = context.dependOnInheritedWidgetOfExactType<UpworkInherited>();
+  static UpworkInherited of(BuildContext context) {
+    final result =
+        context.dependOnInheritedWidgetOfExactType<UpworkInherited>();
     assert(result != null, 'No UpworkInherited found in context');
     return result!;
   }
