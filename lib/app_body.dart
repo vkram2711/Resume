@@ -28,11 +28,11 @@ class _AppBodyState extends State<AppBody> {
         backgroundColor: Colors.black,
         body: LayoutBuilder(
           builder: (BuildContext context, BoxConstraints constraints) {
-            if (constraints.maxWidth > 1050 && constraints.maxHeight > 625) {
+            print('body: $currentPage');
+            if (constraints.maxWidth > 1050 && constraints.maxHeight > 750) {
               return WebScreen(currentPage.toInt(), _updatePage);
             } else {
-              return MobileScreen(
-                  currentPage, constraints.maxHeight, _updatePage);
+              return MobileScreen(currentPage, _updatePage);
             }
           },
         ),

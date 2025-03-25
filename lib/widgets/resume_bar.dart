@@ -16,11 +16,11 @@ class ResumeBar extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
           const TopBarTab('About', 1),
-          //const TopBarTab('Portfolio', 2),
           const TopBarTab('Work', 2),
+          const TopBarTab('Portfolio', 3),
           //const TopBarTab('Achievements', 4),
           if (!UpworkInherited.of(context).upworkMode)
-            const TopBarTab('Contact', 3),
+            const TopBarTab('Contact', 4),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: ResumeButton(
@@ -28,10 +28,10 @@ class ResumeBar extends StatelessWidget {
               () {
                 if (UpworkInherited.of(context).upworkMode) {
                   launch(
-                      'https://drive.google.com/file/d/1Ry9AKSHTW7Ez7Fwur5t9x9WIZp1O4MGX/view?usp=sharing');
+                      'https://drive.google.com/file/d/1ITjez1QBfbC19HABDgvCtM-CFEYY3VA-/view?usp=sharing');
                 } else {
                   launch(
-                      'https://drive.google.com/file/d/1p-o8TB5BxUbI1G_sSfbQFcDD3M5mXTtE/view?usp=sharing');
+                      'https://drive.google.com/file/d/1ITjez1QBfbC19HABDgvCtM-CFEYY3VA-/view?usp=sharing');
                 }
               },
             ),

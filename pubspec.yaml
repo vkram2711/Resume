@@ -27,17 +27,16 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
-  hexcolor: ^2.0.5
-  url_launcher: ^6.0.18
-  flutter_svg: ^1.0.0
+  hexcolor: ^3.0.1
+  url_launcher: ^6.3.1
+  flutter_svg: ^2.0.17
   flutter:
     sdk: flutter
-
+  flutter_markdown: ^0.7.6+2
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
-
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -62,12 +61,18 @@ flutter:
           style: italic
 
   assets:
+    - assets/images/
+    - assets/markdown/
+    - assets/pdf/
     - assets/face.jpg
     - assets/ai_fresh.png
     - assets/bond.png
-    - assets/dev-better.png
+    - assets/edgur_logo.jpeg
+    - assets/dev_better_company_logo.jpeg
+    - assets/upwork_logo.jpeg
     - assets/fittrack.png
     - assets/taxi_finder.svg
+    - assets/the_gray_area.png
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

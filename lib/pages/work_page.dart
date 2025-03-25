@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:resume/models/job_model.dart';
 import 'package:resume/resources/styles.dart';
-
 import 'package:resume/widgets/header.dart';
 import 'package:resume/widgets/page_view/horizontal_tab_bar.dart';
 import 'package:resume/widgets/page_view/vertical_tab_bar.dart';
@@ -18,8 +17,37 @@ class WorkPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final List<JobModel> jobModels = [
       JobModel(
-        mainImage: 'assets/fittrack.png',
-        secondaryImage: 'assets/dev-better.png',
+        mainImage: 'assets/edgur_logo.jpeg',
+        titleShort: 'Edgur',
+        title: hyperlink(
+            text: 'Edgur', link: 'https://edgur.com/', context: context),
+        position: 'Software developer',
+        description: [
+          'Refactored backend systems, reducing codebase size by 40% and enhancing scalability.',
+          'Developed and launched critical features (admin dashboards, payments, AI recommendations) that improved user retention by 15% and engagement by 20%.',
+          'Built a real-time user metrics dashboard, streamlining operational decision-making for admins by 30%.',
+        ],
+        timeInterval: 'May 2024 - Aug 2024',
+        skills: ['Django', 'PostgreSQL', 'React', 'Pinecone', 'OpenAI'],
+      ),
+      JobModel(
+        mainImage: 'assets/upwork_logo.jpeg',
+        titleShort: 'Upwork',
+        title: hyperlink(
+            text: 'Upwork',
+            link: 'http://upwork.com/freelancers/~01fde4bc85457f3469',
+            context: context),
+        position: 'Freelance Software developer',
+        description: [
+          'Delivered 10+ projects with \$10,000+ earnings and 4-5 star reviews, focusing on AI-powered, mobile, and backend solutions.',
+          'Created an educational assistant chatbot for teachers, reducing lesson planning time by 25%, and a customer support chatbot for a Swedish clinic, cutting manual support requests by 30%.',
+          'Built a mobile crypto banking app MVP handling 1,000 daily transactions using Flutter and Go.',
+        ],
+        timeInterval: 'May 2024 - Aug 2024',
+        skills: ['Django', 'PostgreSQL', 'React', 'Pinecone', 'OpenAI'],
+      ),
+      JobModel(
+        mainImage: 'assets/dev_better_company_logo.jpeg',
         titleShort: 'Dev-Better',
         title: TextSpan(children: [
           hyperlink(
@@ -39,102 +67,53 @@ class WorkPage extends StatelessWidget {
               )),
         ]),
         position: 'Flutter Developer',
-        description: TextSpan(
-          text: '''• Worked on features implementing into the app 
-• Covered app with integration tests 
-• Managed team of 3 devs''',
-          style: primaryTextStyle(context),
-        ),
+        description: [
+          'Designed and implemented an integration test infrastructure for a fitness app with 800,000+ global users, improving cross-platform reliability by 15%.',
+          'Streamlined onboarding for new developers by creating tutorials and documentation, reducing ramp-up time from one week to two days, increasing team productivity by 70%.',
+          'Led a team of three Flutter developers, creating 50+ test cases for app screens and resolving critical bugs, enhancing app stability and user experience.',
+        ],
         timeInterval: 'Jun 2021 - Nov 2021',
         skills: ['Flutter', 'Integrated testing', 'Management'],
       ),
-      JobModel(
-        mainImage: 'assets/ai_fresh.png',
-        titleShort: 'AI Fresh Station',
-        title: TextSpan(children: [
-          hyperlink(
-              text: 'AI Fresh Station',
-              link: 'https://getfittrack.com/',
-              context: context),
-        ]),
-        position: 'Software Engineer',
-        description: TextSpan(
-          text:
-              '''Our team developed an indoor gardening system that helps users to grow crops without leaving home. My role was to develop a mobile app and server-side. 
-This project won silver medal at iCan 2020, a silver medal at Warsaw Invention Show, and a gold medal at INTARG Poland.''',
-          style: primaryTextStyle(context),
-        ),
-        timeInterval: 'Nov 2019 - Dec 2021',
-        skills: [
-          'Flutter',
-          'Flask',
-          'Python',
-          'MySQl',
-        ],
-      ),
-      JobModel(
-        mainImage: 'assets/taxi_finder.svg',
-        titleShort: 'Taxi Finder',
-        title: TextSpan(
-          text: 'Taxi Finder',
-          style: accentTextStyle(context, fontSize: 36),
-        ),
-        position: 'Android Developer',
-        description: TextSpan(
-          text: 'Developed Android app MVP for taxi aggregator',
-          style: primaryTextStyle(context),
-        ),
-        skills: ['Android'],
-        timeInterval: 'Nov 2018 - May 2019',
-      ),
-      JobModel(
-        mainImage: 'assets/bond.png',
-        titleShort: 'Bond',
-        title: TextSpan(
-          text: 'Bond Film Platform',
-          style: accentTextStyle(context, fontSize: 36),
-        ),
-        position: 'Android Developer',
-        description: TextSpan(
-          text:
-              'Was hired as an android developer. In 3 months in solo created youtube-like android app MVP.',
-          style: primaryTextStyle(context),
-        ),
-        timeInterval: 'Jun 2018 - Oct 2018',
-        skills: ['Android'],
-      )
     ];
 
     List<Widget> pageTabs = List.generate(
       jobModels.length,
-      (index) => Column(
-        crossAxisAlignment: CrossAxisAlignment.end,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          ResumeInherited.of(context).isWeb
-              ? RotatedBox(
+          (index) =>
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              ResumeInherited
+                  .of(context)
+                  .isWeb
+                  ? RotatedBox(
                   quarterTurns: 1,
                   child: Text(
                     jobModels[index].titleShort,
                     style: const TextStyle(fontSize: 24),
                   ))
-              : Text(
-                  jobModels[index].titleShort,
-                  style: const TextStyle(fontSize: 24),
-                )
-        ],
-      ),
+                  : Text(
+                jobModels[index].titleShort,
+                style: const TextStyle(fontSize: 24),
+              )
+            ],
+          ),
     );
 
-    if (ResumeInherited.of(context).isWeb)
+    if (ResumeInherited
+        .of(context)
+        .isWeb)
       pageTabs = pageTabs.reversed.toList();
     final PageController pageController =
-        PageController(initialPage: currentJob);
+    PageController(initialPage: currentJob);
 
     List<Widget> pages =
-        List.generate(jobModels.length, (index) => WorkCard(jobModels[index]));
+    List.generate(jobModels.length, (index) => WorkCard(jobModels[index]));
 
-    if (ResumeInherited.of(context).isWeb) {
+    if (ResumeInherited
+        .of(context)
+        .isWeb) {
       return Column(
         children: [
           const Header(
