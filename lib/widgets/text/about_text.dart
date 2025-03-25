@@ -7,30 +7,27 @@ class AboutText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RichText(
-        text: TextSpan(children: [
-      TextSpan(
-          text:
-              'Hi! My name is Vlad, and I’m a professional software developer. I started my programming journey with freelance and ',
-          style: primaryTextStyle(context)),
-      TextSpan(text: 'android ', style: accentTextStyle(context)),
-      TextSpan(
-          text:
-              'development four years ago. But the reality shows that it’s very hard to stick to one platform, especially if you work with startups. At some point, the time came, and a new project required a cross-platform solution, so in 2 months, I migrated to ',
-          style: primaryTextStyle(context)),
-      TextSpan(text: 'Flutter ', style: accentTextStyle(context)),
-      TextSpan(
-          text:
-              'and worked with it for more than two years since that time. \n\nAlso, I learned the basics of backend with ',
-          style: primaryTextStyle(context)),
-      TextSpan(text: 'Python', style: secondaryAccentTextStyle(context)),
-      TextSpan(text: ', ', style: primaryTextStyle(context)),
-      TextSpan(text: 'Flask', style: secondaryAccentTextStyle(context)),
-      TextSpan(text: ', and ', style: primaryTextStyle(context)),
-      TextSpan(text: 'SQL ', style: secondaryAccentTextStyle(context)),
-      TextSpan(
-          text:
-              'to create server-side in case of necessity. \n\nI worked as a freelancer, regular developer, and even was a co-founder.',
-          style: primaryTextStyle(context)),
-    ]));
+      text: TextSpan(
+        style: primaryTextStyle(context), // Default style for the entire text
+        children: [
+          TextSpan(
+            text:
+            "I’m a Computer Science and Business student at Minerva University with a passion for developing scalable, user-friendly technology solutions. ",
+          ),
+          TextSpan(
+            text:
+            "With hands-on experience in mobile app development, backend architecture, and AI integration, I’ve built products ranging from video platform MVP to an award-winning indoor gardening system showcased internationally. ",
+          ),
+          TextSpan(
+            text:
+            "I thrive on solving complex challenges, whether it’s building reliable systems or optimizing user experiences. ",
+          ),
+          TextSpan(
+            text:
+            "I'm seeking opportunities in software engineering, tech consulting, product development, and freelance collaborations where I can leverage my skills to make a meaningful impact.",
+          ),
+        ],
+      ),
+    );
   }
 }

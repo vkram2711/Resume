@@ -11,29 +11,18 @@ class CompanyLogo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     bool secondaryProvided = secondaryImage != null;
-    bool isMainSvg = RegExp(r"\.svg").allMatches(mainImage).isNotEmpty;
+    bool isMainSvg = RegExp(r"\.svg")
+        .allMatches(mainImage)
+        .isNotEmpty;
     bool isSecondSvg = false;
-    if (secondaryProvided) {
-      isSecondSvg = RegExp(r"\.svg").allMatches(secondaryImage!).isNotEmpty;
-    }
+
     return Stack(
       alignment: Alignment.bottomRight,
       children: [
-        Center(child: isMainSvg ? SvgPicture.asset(mainImage) : Image.asset(mainImage)),
-        secondaryProvided
-            ? isSecondSvg
-                ? SvgPicture.asset(
-                    secondaryImage!,
-                    width: 50,
-                    height: 50,
-                  )
-                : Image.asset(
-                    secondaryImage!,
-                    width: 50,
-                    height: 50,
-                  )
-            : Container()
-      ],
+        isMainSvg
+            ? SvgPicture.asset(mainImage, width: 50, height: 50)
+            : Image.asset(mainImage, width: 50, height: 50),
+      ]
     );
   }
 }

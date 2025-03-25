@@ -7,7 +7,7 @@ class JobModel {
   String titleShort;
   String position;
   String timeInterval;
-  TextSpan description;
+  List<String> description;
   List<String> skills;
 
   JobModel(

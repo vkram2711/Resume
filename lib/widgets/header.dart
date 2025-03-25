@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:resume/widgets/text/title_text.dart';
 
@@ -18,12 +17,12 @@ class Header extends StatelessWidget {
           text,
           fontSize: 36,
         ),
-        const Expanded(
+         Expanded(
           child: Padding(
-            padding: EdgeInsets.only(left: 20),
+            padding: const EdgeInsets.only(left: 20),
             child: Divider(
               thickness: 1.0,
-              color: Colors.yellow,
+              color: Colors.yellow[600],
             ),
           ),
         )

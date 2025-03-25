@@ -19,13 +19,13 @@ class IntroPage extends StatelessWidget {
               AccentText('Hi, my name is'),
               SecondaryHeaderText('Vlad Kramarenko', fontSize: 64),
               PrimaryText(
-                'I make software for any platform.',
+                'I write code',
                 fontSize: 48,
               ),
               Padding(
                 padding: EdgeInsets.only(top: 12),
                 child: PrimaryText(
-                    'I’m a software engineer with a universal skillset. Usually, I build mobile apps that can be used everywhere, and even this site is actually a mobile app.'),
+                    'I’m a software engineer with a universal skillset. I have experience in Backend and Mobile development with a bit of AI'),
               )
             ],
           ),

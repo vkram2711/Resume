@@ -5,7 +5,8 @@ class PrimaryText extends StatelessWidget {
   final double fontSize;
   final TextAlign textAlign;
 
-  const PrimaryText(this.text, {Key? key, this.fontSize = 24, this.textAlign = TextAlign.start})
+  const PrimaryText(this.text,
+      {Key? key, this.fontSize = 24, this.textAlign = TextAlign.start})
       : super(key: key);
 
   @override

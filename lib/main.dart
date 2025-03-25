@@ -1,17 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:resume/mobile_screen.dart';
-import 'package:resume/pages/about_page.dart';
-import 'package:resume/pages/achievements_page.dart';
-import 'package:resume/pages/contact_page.dart';
-import 'package:resume/pages/portfolio_page.dart';
-import 'package:resume/pages/intro_page.dart';
-import 'package:resume/pages/work_page.dart';
-import 'package:resume/web_screen.dart';
-import 'package:resume/widgets/page_view/page_view_indicator.dart';
-import 'package:resume/widgets/resume_bar.dart';
-import 'package:resume/widgets/resume_inherited.dart';
+import 'app_body.dart';
 
-//TODO: achievements, git, change top bar, listview generate
 void main() {
   runApp(const MyApp());
 }
@@ -21,27 +10,117 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-
     return MaterialApp(
-      title: 'Flutter Demo',
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const AppBody(false),
+        '/u': (context) => const AppBody(true),
+      },
+      title: 'Vladyslav Kramarenko',
       theme: ThemeData(
-          fontFamily: 'ProximaNova',
+        fontFamily: 'ProximaNova',
+        colorScheme: ColorScheme.fromSwatch(
+          primarySwatch: Colors.grey,
           backgroundColor: Colors.black,
-          splashColor: Colors.yellow[600],
-          secondaryHeaderColor: Colors.white,
-          primaryColor: Colors.grey[400]),
-      home: Scaffold(
-        backgroundColor: Colors.black,
-        body: LayoutBuilder(
-          builder: (BuildContext context, BoxConstraints constraints) {
-            if(constraints.maxWidth > 1050) {
-              return const WebScreen();
-            } else {
-              return const MobileScreen();
-            }
-          },
-        )
+          accentColor: Colors.yellow[600],
+        ).copyWith(
+          secondary: Colors.white,
+        ),
+        scaffoldBackgroundColor: Colors.black,
+        splashColor: Colors.yellow[600],
+        primaryColor: Colors.grey[400],
+        textTheme: TextTheme(
+          displayLarge: TextStyle(
+            fontSize: 57.0,
+            fontWeight: FontWeight.normal,
+            color: Colors.white,
+            fontFamily: 'ProximaNova',
+          ),
+          displayMedium: TextStyle(
+            fontSize: 45.0,
+            fontWeight: FontWeight.normal,
+            color: Colors.white,
+            fontFamily: 'ProximaNova',
+          ),
+          displaySmall: TextStyle(
+            fontSize: 36.0,
+            fontWeight: FontWeight.normal,
+            color: Colors.white,
+            fontFamily: 'ProximaNova',
+          ),
+          headlineLarge: TextStyle(
+            fontSize: 32.0,
+            fontWeight: FontWeight.normal,
+            color: Colors.white,
+            fontFamily: 'ProximaNova',
+          ),
+          headlineMedium: TextStyle(
+            fontSize: 28.0,
+            fontWeight: FontWeight.normal,
+            color: Colors.white,
+            fontFamily: 'ProximaNova',
+          ),
+          headlineSmall: TextStyle(
+            fontSize: 24.0,
+            fontWeight: FontWeight.normal,
+            color: Colors.white,
+            fontFamily: 'ProximaNova',
+          ),
+          titleLarge: TextStyle(
+            fontSize: 22.0,
+            fontWeight: FontWeight.normal,
+            color: Colors.white,
+            fontFamily: 'ProximaNova',
+          ),
+          titleMedium: TextStyle(
+            fontSize: 16.0,
+            fontWeight: FontWeight.w500,
+            color: Colors.white,
+            fontFamily: 'ProximaNova',
+          ),
+          titleSmall: TextStyle(
+            fontSize: 14.0,
+            fontWeight: FontWeight.w500,
+            color: Colors.white,
+            fontFamily: 'ProximaNova',
+          ),
+          bodyLarge: TextStyle(
+            fontSize: 16.0,
+            fontWeight: FontWeight.normal,
+            color: Colors.grey[400],
+            fontFamily: 'ProximaNova',
+          ),
+          bodyMedium: TextStyle(
+            fontSize: 14.0,
+            fontWeight: FontWeight.normal,
+            color: Colors.grey[400],
+            fontFamily: 'ProximaNova',
+          ),
+          bodySmall: TextStyle(
+            fontSize: 12.0,
+            fontWeight: FontWeight.normal,
+            color: Colors.grey[400],
+            fontFamily: 'ProximaNova',
+          ),
+          labelLarge: TextStyle(
+            fontSize: 14.0,
+            fontWeight: FontWeight.w500,
+            color: Colors.white,
+            fontFamily: 'ProximaNova',
+          ),
+          labelMedium: TextStyle(
+            fontSize: 12.0,
+            fontWeight: FontWeight.w500,
+            color: Colors.white,
+            fontFamily: 'ProximaNova',
+          ),
+          labelSmall: TextStyle(
+            fontSize: 11.0,
+            fontWeight: FontWeight.w500,
+            color: Colors.white,
+            fontFamily: 'ProximaNova',
+          ),
+        ),
       ),
     );
   }
