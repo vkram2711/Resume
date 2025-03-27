@@ -1,6 +1,7 @@
 
 ##  Overview
 
+[Profile link](https://www.upwork.com/freelancers/~01fde4bc85457f3469)
 ![Internals](assets/images/Upwork/profile.png#500x500)
 
 Over the past few years, I’ve built a strong presence on Upwork by delivering high-quality technical solutions to global clients. I’ve completed **10+ projects** and earned **$10,000+** in total revenue, maintaining **consistent 4–5 star reviews** and long-term relationships with satisfied clients.

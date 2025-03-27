@@ -17,7 +17,7 @@ class WorkCard extends StatelessWidget {
       transitionDuration: Duration(milliseconds: 600),
       pageBuilder: (context, animation, secondaryAnimation) {
         return ProjectDetailsPage(
-          project: jobModel.title.toPlainText(),
+          project: jobModel.titleShort,
           decoration: BoxDecoration(
             border: Border.all(
               color: Theme.of(context).splashColor,
