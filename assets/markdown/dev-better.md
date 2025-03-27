@@ -1,4 +1,6 @@
 ### Flutter Developer at Dev Better (Outsourcing Partner for FitTrack)
+[FitTrack](https://tryfittrack.com/)
+[Dev-Better](https://dev-better.com/)
 
 At Dev Better, I worked as a Flutter developer on **FitTrack**, a fast-growing fitness startup that sells smart scales and serves over **800,000 global users**.
 
