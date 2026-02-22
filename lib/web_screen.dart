@@ -22,6 +22,9 @@ class WebScreen extends StatefulWidget {
 }
 
 class _WebScreenState extends State<WebScreen> {
+  int _workTabIndex = 0;
+  int _portfolioTabIndex = 0;
+
   @override
   void initState() {
     print('init state web');
@@ -37,8 +40,14 @@ class _WebScreenState extends State<WebScreen> {
     final pages = [
       const IntroPage(),
       const AboutPage(),
-      WorkPage(),
-      PortfolioPage(),
+      WorkPage(
+        initialPageIndex: _workTabIndex,
+        onPageChanged: (i) => setState(() => _workTabIndex = i),
+      ),
+      PortfolioPage(
+        initialPageIndex: _portfolioTabIndex,
+        onPageChanged: (i) => setState(() => _portfolioTabIndex = i),
+      ),
       if (!UpworkInherited.of(context).upworkMode) const ContactPage()
     ];
 

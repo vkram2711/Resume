@@ -22,6 +22,9 @@ class MobileScreen extends StatefulWidget {
 }
 
 class _MobileScreenState extends State<MobileScreen> {
+  int _workTabIndex = 0;
+  int _portfolioTabIndex = 0;
+
   @override
   void initState() {
     print('init state mobile');
@@ -45,10 +48,20 @@ class _MobileScreenState extends State<MobileScreen> {
           child: Padding(padding: EdgeInsets.all(16), child: AboutPage())),
       SizedBox(
           height: MobileScreen.maxHeight,
-          child: Padding(padding: const EdgeInsets.all(16), child: WorkPage())),
-      const SizedBox(
+          child: Padding(
+              padding: const EdgeInsets.all(16),
+              child: WorkPage(
+                initialPageIndex: _workTabIndex,
+                onPageChanged: (i) => setState(() => _workTabIndex = i),
+              ))),
+      SizedBox(
           height: MobileScreen.maxHeight,
-          child: Padding(padding: EdgeInsets.all(16), child: PortfolioPage())),
+          child: Padding(
+              padding: const EdgeInsets.all(16),
+              child: PortfolioPage(
+                initialPageIndex: _portfolioTabIndex,
+                onPageChanged: (i) => setState(() => _portfolioTabIndex = i),
+              ))),
       if (!UpworkInherited.of(context).upworkMode)
         const SizedBox(
             height: MobileScreen.maxHeight,

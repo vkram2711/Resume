@@ -9,10 +9,34 @@ import '../widgets/text/hyperlink.dart';
 import '../widgets/work_card.dart';
 import 'package:resume/resources/styles.dart';
 
-int currentJob = 0;
+class PortfolioPage extends StatefulWidget {
+  final int initialPageIndex;
+  final ValueChanged<int>? onPageChanged;
 
-class PortfolioPage extends StatelessWidget {
-  const PortfolioPage({Key? key}) : super(key: key);
+  const PortfolioPage(
+      {Key? key, this.initialPageIndex = 0, this.onPageChanged})
+      : super(key: key);
+
+  @override
+  State<PortfolioPage> createState() => _PortfolioPageState();
+}
+
+class _PortfolioPageState extends State<PortfolioPage> {
+  late PageController _pageController;
+  late int _pageIndex;
+
+  @override
+  void initState() {
+    super.initState();
+    _pageIndex = widget.initialPageIndex;
+    _pageController = PageController(initialPage: widget.initialPageIndex);
+  }
+
+  @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -112,8 +136,6 @@ class PortfolioPage extends StatelessWidget {
         .of(context)
         .isWeb)
       pageTabs = pageTabs.reversed.toList();
-    final PageController pageController =
-    PageController(initialPage: currentJob);
 
     List<Widget> pages =
     List.generate(jobModels.length, (index) => WorkCard(jobModels[index]));
@@ -138,7 +160,15 @@ class PortfolioPage extends StatelessWidget {
                         Flexible(flex: 1, child: Container()),
                         Flexible(
                           flex: 3,
-                          child: VerticalTabBar(pageTabs, pageController),
+                          child: VerticalTabBar(
+                            pageTabs,
+                            _pageController,
+                            initialPageIndex: _pageIndex,
+                            onPageChanged: (i) {
+                setState(() => _pageIndex = i);
+                widget.onPageChanged?.call(i);
+              },
+                          ),
                         ),
                         Flexible(flex: 1, child: Container())
                       ],
@@ -146,7 +176,7 @@ class PortfolioPage extends StatelessWidget {
                 Flexible(
                   flex: 4,
                   child: PageView(
-                      controller: pageController,
+                      controller: _pageController,
                       physics: const NeverScrollableScrollPhysics(),
                       scrollDirection: Axis.vertical,
                       children: pages),
@@ -163,10 +193,18 @@ class PortfolioPage extends StatelessWidget {
             accentText: '3. ',
             text: 'Portfolio',
           ),
-          HorizontalTabBar(pageTabs, pageController),
+          HorizontalTabBar(
+            pageTabs,
+            _pageController,
+            initialPageIndex: _pageIndex,
+            onPageChanged: (i) {
+                setState(() => _pageIndex = i);
+                widget.onPageChanged?.call(i);
+              },
+          ),
           Expanded(
             child: PageView(
-                controller: pageController,
+                controller: _pageController,
                 physics: const NeverScrollableScrollPhysics(),
                 scrollDirection: Axis.horizontal,
                 children: pages),

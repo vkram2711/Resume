@@ -8,10 +8,33 @@ import 'package:resume/widgets/inherited/resume_inherited.dart';
 import 'package:resume/widgets/text/hyperlink.dart';
 import 'package:resume/widgets/work_card.dart';
 
-int currentJob = 0;
+class WorkPage extends StatefulWidget {
+  final int initialPageIndex;
+  final ValueChanged<int>? onPageChanged;
 
-class WorkPage extends StatelessWidget {
-  WorkPage({Key? key}) : super(key: key);
+  WorkPage({Key? key, this.initialPageIndex = 0, this.onPageChanged})
+      : super(key: key);
+
+  @override
+  State<WorkPage> createState() => _WorkPageState();
+}
+
+class _WorkPageState extends State<WorkPage> {
+  late PageController _pageController;
+  late int _pageIndex;
+
+  @override
+  void initState() {
+    super.initState();
+    _pageIndex = widget.initialPageIndex;
+    _pageController = PageController(initialPage: widget.initialPageIndex);
+  }
+
+  @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +43,7 @@ class WorkPage extends StatelessWidget {
         mainImage: 'assets/jet.png',
         titleShort: 'PrivateJet.com',
         title: hyperlink(
-            text: 'Edgur', link: 'https://privatejet.com/', context: context),
+            text: 'PrivateJet.com', link: 'https://privatejet.com/', context: context),
         position: 'Machine Learning / AI Engineer',
         description: [
           "Led AI initiatives for a private jet charter brokerage platform, deploying locally hosted LLMs for sales automation and developing an XGBoost-based ML model trained on 100k+ historical charter flight records to predict pricing, improving quote accuracy by ~20% and supporting faster sales turnaround.",
@@ -112,8 +135,6 @@ class WorkPage extends StatelessWidget {
         .of(context)
         .isWeb)
       pageTabs = pageTabs.reversed.toList();
-    final PageController pageController =
-    PageController(initialPage: currentJob);
 
     List<Widget> pages =
     List.generate(jobModels.length, (index) => WorkCard(jobModels[index]));
@@ -138,7 +159,15 @@ class WorkPage extends StatelessWidget {
                         Flexible(flex: 1, child: Container()),
                         Flexible(
                           flex: 3,
-                          child: VerticalTabBar(pageTabs, pageController),
+                          child: VerticalTabBar(
+                            pageTabs,
+                            _pageController,
+                            initialPageIndex: _pageIndex,
+                            onPageChanged: (i) {
+                setState(() => _pageIndex = i);
+                widget.onPageChanged?.call(i);
+              },
+                          ),
                         ),
                         Flexible(flex: 1, child: Container())
                       ],
@@ -146,7 +175,7 @@ class WorkPage extends StatelessWidget {
                 Flexible(
                   flex: 4,
                   child: PageView(
-                      controller: pageController,
+                      controller: _pageController,
                       physics: const NeverScrollableScrollPhysics(),
                       scrollDirection: Axis.vertical,
                       children: pages),
@@ -163,10 +192,18 @@ class WorkPage extends StatelessWidget {
             accentText: '3. ',
             text: 'Work',
           ),
-          HorizontalTabBar(pageTabs, pageController),
+          HorizontalTabBar(
+            pageTabs,
+            _pageController,
+            initialPageIndex: _pageIndex,
+            onPageChanged: (i) {
+                setState(() => _pageIndex = i);
+                widget.onPageChanged?.call(i);
+              },
+          ),
           Expanded(
             child: PageView(
-                controller: pageController,
+                controller: _pageController,
                 physics: const NeverScrollableScrollPhysics(),
                 scrollDirection: Axis.horizontal,
                 children: pages),
