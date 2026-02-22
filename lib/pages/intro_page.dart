@@ -25,7 +25,7 @@ class IntroPage extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.only(top: 12),
                 child: PrimaryText(
-                    'I’m a software engineer with a universal skillset. I have experience in Backend and Mobile development with a bit of AI'),
+                    'AI/Full-stack engineer with 6+ years of experience building and shipping production systems across startups and freelance projects'),
               )
             ],
           ),

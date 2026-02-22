@@ -3,6 +3,7 @@ import 'package:resume/pages/about_page.dart';
 import 'package:resume/pages/contact_page.dart';
 import 'package:resume/pages/intro_page.dart';
 import 'package:resume/pages/work_page.dart';
+import 'package:resume/pages/portfolio_page.dart';
 import 'package:resume/widgets/inherited/resume_inherited.dart';
 import 'package:resume/widgets/inherited/upwork_inherited.dart';
 
@@ -45,6 +46,9 @@ class _MobileScreenState extends State<MobileScreen> {
       SizedBox(
           height: MobileScreen.maxHeight,
           child: Padding(padding: const EdgeInsets.all(16), child: WorkPage())),
+      const SizedBox(
+          height: MobileScreen.maxHeight,
+          child: Padding(padding: EdgeInsets.all(16), child: PortfolioPage())),
       if (!UpworkInherited.of(context).upworkMode)
         const SizedBox(
             height: MobileScreen.maxHeight,

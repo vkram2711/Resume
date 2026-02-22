@@ -17,18 +17,30 @@ class WorkPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final List<JobModel> jobModels = [
       JobModel(
+        mainImage: 'assets/jet.png',
+        titleShort: 'PrivateJet.com',
+        title: hyperlink(
+            text: 'Edgur', link: 'https://privatejet.com/', context: context),
+        position: 'Machine Learning / AI Engineer',
+        description: [
+          "Led AI initiatives for a private jet charter brokerage platform, deploying locally hosted LLMs for sales automation and developing an XGBoost-based ML model trained on 100k+ historical charter flight records to predict pricing, improving quote accuracy by ~20% and supporting faster sales turnaround.",
+        ],
+        timeInterval: 'May 2025 - Sep 2025',
+        skills: ['Django', 'PostgreSQL', 'React', 'Pinecone', 'LLM'],
+      ),
+      JobModel(
         mainImage: 'assets/edgur_logo.jpeg',
         titleShort: 'Edgur',
         title: hyperlink(
             text: 'Edgur', link: 'https://edgur.com/', context: context),
         position: 'Software developer',
         description: [
-          'Refactored backend systems, reducing codebase size by 40% and enhancing scalability.',
-          'Developed and launched critical features (admin dashboards, payments, AI recommendations) that improved user retention by 15% and engagement by 20%.',
-          'Built a real-time user metrics dashboard, streamlining operational decision-making for admins by 30%.',
+          'Refactored backend systems, reducing codebase size by 40%, enhancing scalability and readability',
+          'Developed and optimized critical features such as admin dashboards, authentication systems, payments, search, and AI-driven recommendation engines, increasing user retention by 15%',
+          'Led the integration of semantic search and AI playlist generation, resulting in +20% user engagement',
         ],
-        timeInterval: 'May 2024 - Aug 2024',
-        skills: ['Django', 'PostgreSQL', 'React', 'Pinecone', 'OpenAI'],
+        timeInterval: 'May 2024 - Sep 2024',
+        skills: ['Django', 'PostgreSQL', 'React', 'Pinecone', 'LLM'],
       ),
       JobModel(
         mainImage: 'assets/upwork_logo.jpeg',
@@ -39,12 +51,13 @@ class WorkPage extends StatelessWidget {
             context: context),
         position: 'Freelance Software developer',
         description: [
-          'Delivered 10+ projects with \$10,000+ earnings and 4-5 star reviews, focusing on AI-powered, mobile, and backend solutions.',
-          'Created an educational assistant chatbot for teachers, reducing lesson planning time by 25%, and a customer support chatbot for a Swedish clinic, cutting manual support requests by 30%.',
-          'Built a mobile crypto banking app MVP handling 1,000 daily transactions using Flutter and Go.',
+          'Completed 10+ projects on Upwork, earning $10,000+ with consistent 4-5 star client reviews.',
+          'Mobile crypto banking app MVP, integrating Kraken and Circle APIs to enable seamless USDC transactions, processing up to 1,000 daily transactions during the testing phase.',
+          'Prototype of customer support chatbot API for a Sweden-based clinic. Automated common inquiries, reducing manual support requests by 30%',
+          'Educational assistant chatbot for a Saudi Arabian client, designed to assist teachers using a knowledge base from text and video files, and deployed the solution via a Telegram bot integration, streamlining lesson planning and reducing preparation time by 25%.',
         ],
-        timeInterval: 'May 2024 - Aug 2024',
-        skills: ['Django', 'PostgreSQL', 'React', 'Pinecone', 'OpenAI'],
+        timeInterval: 'Feb 2022 - Aug 2023',
+        skills: ['Flutter', 'Flask', 'Firebase', 'React', 'Pinecone', 'LLM', 'Go'],
       ),
       JobModel(
         mainImage: 'assets/dev_better_company_logo.jpeg',
@@ -68,12 +81,12 @@ class WorkPage extends StatelessWidget {
         ]),
         position: 'Flutter Developer',
         description: [
-          'Designed and implemented an integration test infrastructure for a fitness app with 800,000+ global users, improving cross-platform reliability by 15%.',
-          'Streamlined onboarding for new developers by creating tutorials and documentation, reducing ramp-up time from one week to two days, increasing team productivity by 70%.',
-          'Led a team of three Flutter developers, creating 50+ test cases for app screens and resolving critical bugs, enhancing app stability and user experience.',
+          'Created an integration test infrastructure for a fitness app with over 800,000 global users, improving cross-platform reliability by 15%.',
+          'Streamlined onboarding for new developers by creating detailed tutorials and documentation, reducing ramp-up time from one week to two days, and increasing team productivity by 70%.',
+          'Led a team of three Flutter developers to create 50+ test cases for app screens and resolve critical bugs',
         ],
         timeInterval: 'Jun 2021 - Nov 2021',
-        skills: ['Flutter', 'Integrated testing', 'Management'],
+        skills: ['Flutter'],
       ),
     ];
 

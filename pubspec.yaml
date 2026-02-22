@@ -73,6 +73,9 @@ flutter:
     - assets/fittrack.png
     - assets/taxi_finder.svg
     - assets/the_gray_area.png
+    - assets/jet.png
+    - assets/mankey.png
+    - assets/measurements.png
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

@@ -12,19 +12,19 @@ class AboutText extends StatelessWidget {
         children: [
           TextSpan(
             text:
-            "I’m a Computer Science and Business student at Minerva University with a passion for developing scalable, user-friendly technology solutions. ",
+            "I'm Vlad, an AI/full-stack engineer with 6+ years of experience building and shipping production systems across startups and freelance projects. My current focus is on AI and backend engineering — LLM pipelines, RAG architectures, and scalable web applications.",
           ),
           TextSpan(
             text:
-            "With hands-on experience in mobile app development, backend architecture, and AI integration, I’ve built products ranging from video platform MVP to an award-winning indoor gardening system showcased internationally. ",
+            "Most recently, I was an ML/AI Engineer at PrivateJet.com, where I deployed locally hosted LLMs and built an XGBoost pricing model on 100k+ records. Before that, I worked as a full-stack engineer at Edgur (an early-stage edtech startup in Atlanta), and independently as a consultant on Upwork, completing 10+ AI, backend, and mobile projects for clients across continents.",
           ),
           TextSpan(
             text:
-            "I thrive on solving complex challenges, whether it’s building reliable systems or optimizing user experiences. ",
+            "I studied CS and Business at Minerva University — a program that had me living and working across 7 cities on 4 continents, which means I'm comfortable in fast-moving, cross-cultural environments.",
           ),
           TextSpan(
             text:
-            "I'm seeking opportunities in software engineering, tech consulting, product development, and freelance collaborations where I can leverage my skills to make a meaningful impact.",
+            "I'm based in Tokyo and open to full-time roles in AI engineering, backend systems, or full-stack product development.",
           ),
         ],
       ),

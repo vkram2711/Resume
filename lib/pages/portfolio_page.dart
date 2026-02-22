@@ -17,21 +17,28 @@ class PortfolioPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final List<JobModel> jobModels = [
       JobModel(
-        mainImage: 'assets/ai_fresh.png',
-        titleShort: 'AI Fresh Station',
-        title: TextSpan(children: [
-          hyperlink(
-              text: 'AI Fresh Station',
-              link: 'https://drive.google.com/file/d/1gsBT_K1n_qIYcLob0cSxa1mpbCMNQSrz/view?usp=sharing',
-              context: context),
-        ]),
-        position: 'Software Engineer',
+        mainImage: 'assets/markdown/mankey.md',
+        titleShort: 'Mankey',
+        title: TextSpan(
+              text: 'Mankey',
+        ),
+        position: 'Fullstack Developer',
         description: [
-          'Our team developed an indoor gardening system that helps users to grow crops without leaving home.',
-          'My role was to develop a mobile app and server-side.',
-          'This project won silver medal at iCan 2020, a silver medal at Warsaw Invention Show, and a gold medal at INTARG Poland.',
+          "A knowledge management system where AI handles the logistics of organizing notes while you do the thinking that makes learning stick.",
+          "Transform scattered highlights into interconnected permanent notes, synthesize clusters into navigable hubs, and publish polished work with auto-generated citations—all while retaining more than passive note-taking ever could."
         ],
-        timeInterval: 'Nov 2019 - Dec 2021',
+        timeInterval: 'Feb 2025',
+        skills: [],
+      ),
+      JobModel(
+        mainImage: 'assets/markdown/measurements.md',
+        titleShort: 'AI Measurements',
+        title: TextSpan(text: 'AI Measurements'),
+        position: 'Fullstack Developer',
+        description: [
+          'A web application that estimates human body measurements from front and side photos using pose detection and computer vision. Users upload images and enter their height to receive visualized pose landmarks and approximate measurements',
+        ],
+        timeInterval: 'Jan 2025',
         skills: [],
       ),
       JobModel(
@@ -51,6 +58,25 @@ class PortfolioPage extends StatelessWidget {
         timeInterval: 'Feb 2023',
         skills: [],
       ),
+      JobModel(
+        mainImage: 'assets/ai_fresh.png',
+        titleShort: 'AI Fresh Station',
+        title: TextSpan(children: [
+          hyperlink(
+              text: 'AI Fresh Station',
+              link: 'https://drive.google.com/file/d/1gsBT_K1n_qIYcLob0cSxa1mpbCMNQSrz/view?usp=sharing',
+              context: context),
+        ]),
+        position: 'Software Engineer',
+        description: [
+          'Our team developed an indoor gardening system that helps users to grow crops without leaving home.',
+          'My role was to develop a mobile app and server-side.',
+          'This project won silver medal at iCan 2020, a silver medal at Warsaw Invention Show, and a gold medal at INTARG Poland.',
+        ],
+        timeInterval: 'Nov 2019 - Dec 2021',
+        skills: [],
+      ),
+
     ];
 
     List<Widget> pageTabs = List.generate(
