@@ -7,6 +7,7 @@ import '../widgets/page_view/horizontal_tab_bar.dart';
 import '../widgets/page_view/vertical_tab_bar.dart';
 import '../widgets/text/hyperlink.dart';
 import '../widgets/work_card.dart';
+import 'package:resume/resources/styles.dart';
 
 int currentJob = 0;
 
@@ -17,10 +18,11 @@ class PortfolioPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final List<JobModel> jobModels = [
       JobModel(
-        mainImage: 'assets/markdown/mankey.md',
+        mainImage: 'assets/mankey.png',
         titleShort: 'Mankey',
         title: TextSpan(
-              text: 'Mankey',
+              text:'Mankey',
+              style: accentTextStyle(context, fontSize: 36),
         ),
         position: 'Fullstack Developer',
         description: [
@@ -31,9 +33,12 @@ class PortfolioPage extends StatelessWidget {
         skills: [],
       ),
       JobModel(
-        mainImage: 'assets/markdown/measurements.md',
+        mainImage: 'assets/measurements.png',
         titleShort: 'AI Measurements',
-        title: TextSpan(text: 'AI Measurements'),
+        title:  TextSpan(
+          text:'AI Measurements',
+          style: accentTextStyle(context, fontSize: 36),
+        ),
         position: 'Fullstack Developer',
         description: [
           'A web application that estimates human body measurements from front and side photos using pose detection and computer vision. Users upload images and enter their height to receive visualized pose landmarks and approximate measurements',

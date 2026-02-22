@@ -26,7 +26,7 @@ class WorkPage extends StatelessWidget {
           "Led AI initiatives for a private jet charter brokerage platform, deploying locally hosted LLMs for sales automation and developing an XGBoost-based ML model trained on 100k+ historical charter flight records to predict pricing, improving quote accuracy by ~20% and supporting faster sales turnaround.",
         ],
         timeInterval: 'May 2025 - Sep 2025',
-        skills: ['Django', 'PostgreSQL', 'React', 'Pinecone', 'LLM'],
+        skills: ['Machine Learning', 'LLM'],
       ),
       JobModel(
         mainImage: 'assets/edgur_logo.jpeg',
@@ -51,13 +51,13 @@ class WorkPage extends StatelessWidget {
             context: context),
         position: 'Freelance Software developer',
         description: [
-          'Completed 10+ projects on Upwork, earning $10,000+ with consistent 4-5 star client reviews.',
+          'Completed 10+ projects on Upwork, earning \$10,000+ with consistent 4-5 star client reviews.',
           'Mobile crypto banking app MVP, integrating Kraken and Circle APIs to enable seamless USDC transactions, processing up to 1,000 daily transactions during the testing phase.',
           'Prototype of customer support chatbot API for a Sweden-based clinic. Automated common inquiries, reducing manual support requests by 30%',
           'Educational assistant chatbot for a Saudi Arabian client, designed to assist teachers using a knowledge base from text and video files, and deployed the solution via a Telegram bot integration, streamlining lesson planning and reducing preparation time by 25%.',
         ],
         timeInterval: 'Feb 2022 - Aug 2023',
-        skills: ['Flutter', 'Flask', 'Firebase', 'React', 'Pinecone', 'LLM', 'Go'],
+        skills: ['Flutter', 'Flask', 'Firebase', 'React', 'Pinecone', 'Langchain', 'LLM', 'Go'],
       ),
       JobModel(
         mainImage: 'assets/dev_better_company_logo.jpeg',
@@ -72,12 +72,6 @@ class WorkPage extends StatelessWidget {
               text: 'FitTrack',
               link: 'https://getfittrack.com/',
               context: context),
-          TextSpan(
-              text: ' project',
-              style: primaryTextStyle(
-                context,
-                fontSize: 36,
-              )),
         ]),
         position: 'Flutter Developer',
         description: [
