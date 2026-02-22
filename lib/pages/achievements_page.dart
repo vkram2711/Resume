@@ -6,6 +6,6 @@ class AchievementsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return UnderDevelopmentPage();
+    return const UnderDevelopmentPage();
   }
 }

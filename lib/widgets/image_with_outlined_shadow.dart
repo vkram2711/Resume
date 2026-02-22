@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:resume/widgets/inherited/resume_inherited.dart';
 
 class ImageWithOutlinedShadow extends StatelessWidget {
   final double width;
   final double height;
 
-  const ImageWithOutlinedShadow({Key? key, this.height=300, this.width=300}) : super(key: key);
+  const ImageWithOutlinedShadow({Key? key, this.height = 300, this.width = 300})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
         Padding(
-          padding: const EdgeInsets.only(top: 40, left: 40),
+          padding: ResumeInherited.of(context).isWeb
+              ? const EdgeInsets.only(top: 40, left: 40)
+              : const EdgeInsets.only(top: 15, left: 15),
           child: Container(
             width: width,
             height: height,
@@ -23,7 +27,11 @@ class ImageWithOutlinedShadow extends StatelessWidget {
             ),
           ),
         ),
-        Image.asset('assets/face.jpg', width: width, height: height,),
+        Image.asset(
+          'assets/face.jpg',
+          width: width,
+          height: height,
+        ),
       ],
     );
   }
