@@ -41,22 +41,26 @@ class AboutPage extends StatelessWidget {
       return Row(
         children: [
           Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
-                Header(
-                  accentText: '1. ',
-                  text: 'About me',
-                ),
-                Padding(padding: EdgeInsets.only(top: 20), child: AboutText()),
-                Center(
-                    child: Padding(
-                        padding: EdgeInsets.only(top: 20),
-                        child: ImageWithOutlinedShadow(
-                          height: 150,
-                          width: 150,
-                        )))
-              ],
+            child: ConstrainedBox(
+              constraints: const BoxConstraints(minWidth: 0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
+                children: const [
+                  Header(
+                    accentText: '1. ',
+                    text: 'About me',
+                  ),
+                  Padding(padding: EdgeInsets.only(top: 20), child: AboutText()),
+                  Center(
+                      child: Padding(
+                          padding: EdgeInsets.only(top: 20),
+                          child: ImageWithOutlinedShadow(
+                            height: 150,
+                            width: 150,
+                          )))
+                ],
+              ),
             ),
           ),
         ],

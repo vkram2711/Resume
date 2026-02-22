@@ -82,34 +82,44 @@ class WorkCard extends StatelessWidget {
                         ),
                       ),
                       Expanded(
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                RichText(text: jobModel.title),
-                                DetailsButton(
-                                  onPressed: () => _openDetailsPage(context),
-                                ),
-                              ],
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(top: 8, bottom: 18),
-                              child: SecondaryHeaderText(jobModel.position),
-                            ),
-                            Flexible(
-                              child: _buildDescription(context, jobModel.description),
-                            ),
-                            Align(
-                              alignment: Alignment.bottomRight,
-                              child: Padding(
-                                padding: EdgeInsets.only(right: padding, top: 16),
-                                child: PrimaryText(jobModel.timeInterval),
+                        child: ConstrainedBox(
+                          constraints: const BoxConstraints(minWidth: 0),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Expanded(
+                                    child: RichText(
+                                      text: jobModel.title,
+                                      softWrap: true,
+                                      overflow: TextOverflow.visible,
+                                    ),
+                                  ),
+                                  DetailsButton(
+                                    onPressed: () => _openDetailsPage(context),
+                                  ),
+                                ],
                               ),
-                            ),
-                          ],
+                              Padding(
+                                padding: const EdgeInsets.only(top: 8, bottom: 18),
+                                child: SecondaryHeaderText(jobModel.position),
+                              ),
+                              Flexible(
+                                child: _buildDescription(context, jobModel.description),
+                              ),
+                              Align(
+                                alignment: Alignment.bottomRight,
+                                child: Padding(
+                                  padding: EdgeInsets.only(right: padding, top: 16),
+                                  child: PrimaryText(jobModel.timeInterval),
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ],
@@ -136,6 +146,8 @@ class WorkCard extends StatelessWidget {
         child: Text(
           '• $point',
           style: TextStyle(color: Theme.of(context).primaryColor, fontSize: textSize),
+          softWrap: true,
+          overflow: TextOverflow.visible,
         ),
       ))
           .toList(),

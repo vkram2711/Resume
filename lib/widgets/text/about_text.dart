@@ -7,6 +7,7 @@ class AboutText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RichText(
+      softWrap: true,
       text: TextSpan(
         style: primaryTextStyle(context), // Default style for the entire text
         children: [

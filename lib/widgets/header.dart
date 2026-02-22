@@ -12,12 +12,14 @@ class Header extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        TitleText(
-          accentText,
-          text,
-          fontSize: 36,
+        Flexible(
+          child: TitleText(
+            accentText,
+            text,
+            fontSize: 36,
+          ),
         ),
-         Expanded(
+        Expanded(
           child: Padding(
             padding: const EdgeInsets.only(left: 20),
             child: Divider(

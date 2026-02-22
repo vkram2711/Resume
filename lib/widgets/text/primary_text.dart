@@ -14,6 +14,8 @@ class PrimaryText extends StatelessWidget {
     return Text(
       text,
       textAlign: textAlign,
+      softWrap: true,
+      overflow: TextOverflow.visible,
       style:
           TextStyle(color: Theme.of(context).primaryColor, fontSize: fontSize),
     );

@@ -13,6 +13,7 @@ class TitleText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RichText(
+      softWrap: true,
       text: TextSpan(
         children: [
           TextSpan(
