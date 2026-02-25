@@ -65,8 +65,8 @@ flutter:
     - assets/images/Jet/
     - assets/images/Mankey/
     - assets/images/Upwork/
-    - assets/images/Gray Area/
-    - assets/images/AI Fresh Station/
+    - "assets/images/Gray Area/"
+    - "assets/images/AI Fresh Station/"
     - assets/markdown/
     - assets/pdf/
     - assets/face.jpg

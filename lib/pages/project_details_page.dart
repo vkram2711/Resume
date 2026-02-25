@@ -88,6 +88,50 @@ class _ProjectDetailScreenState extends State<ProjectDetailsPage> {
                               launchUrl(Uri.parse(href));
                             }
                           },
+                          imageBuilder: (uri, title, alt) {
+                            final path = uri.path;
+                            final isAsset = uri.scheme.isEmpty ||
+                                uri.scheme == 'asset' ||
+                                path.startsWith('assets/');
+                            if (isAsset && path.startsWith('assets/')) {
+                              final assetPath = Uri.decodeComponent(path);
+                              return Image.asset(
+                                assetPath,
+                                fit: BoxFit.contain,
+                                errorBuilder: (_, __, ___) => Icon(
+                                  Icons.broken_image,
+                                  color: Colors.grey,
+                                  size: 48,
+                                ),
+                              );
+                            }
+                            if (uri.scheme == 'http' ||
+                                uri.scheme == 'https') {
+                              return Image.network(
+                                uri.toString(),
+                                fit: BoxFit.contain,
+                                loadingBuilder: (_, child, progress) =>
+                                    progress == null
+                                        ? child
+                                        : const Padding(
+                                            padding: EdgeInsets.all(24),
+                                            child: Center(
+                                                child:
+                                                    CircularProgressIndicator()),
+                                          ),
+                                errorBuilder: (_, __, ___) => Icon(
+                                  Icons.broken_image,
+                                  color: Colors.grey,
+                                  size: 48,
+                                ),
+                              );
+                            }
+                            return Icon(
+                              Icons.broken_image,
+                              color: Colors.grey,
+                              size: 48,
+                            );
+                          },
                           styleSheet:
                               MarkdownStyleSheet.fromTheme(Theme.of(context))
                                   .copyWith(
