@@ -44,6 +44,7 @@ class VerticalTabBarState extends State<VerticalTabBar>
       child: TabBar(
         tabs: widget.tabs,
         controller: _tabController,
+        isScrollable: true,
         onTap: (index) {
           widget.pageController.animateToPage(widget.tabs.length - 1 - index,
               duration: const Duration(milliseconds: 500),

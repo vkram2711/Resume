@@ -102,6 +102,39 @@ class _WorkPageState extends State<WorkPage> {
         timeInterval: 'Jun 2021 - Nov 2021',
         skills: ['Flutter'],
       ),
+      JobModel(
+        mainImage: 'assets/ai_fresh.png',
+        titleShort: 'Fresh Station',
+        title: hyperlink(
+            text: 'AI Fresh Station',
+            link: 'https://drive.google.com/file/d/1gsBT_K1n_qIYcLob0cSxa1mpbCMNQSrz/view?usp=sharing',
+            context: context),
+        position: 'Co-Founder, Software Developer (Backend/Mobile)',
+        description: [
+          'Co-founded an IoT startup building an automated indoor gardening system; built a Flutter mobile app and Flask/SQL backend enabling real-time device control and data sync with 99.9% uptime.',
+          'Won Gold (INTARG 2020), two silver medals (iCan, Warsaw Invention Show) across 3 international invention competitions (60+ countries, 475 participants).',
+        ],
+        timeInterval: 'Nov 2019 - Dec 2020',
+        skills: ['Flutter', 'Flask', 'MySQL', 'Python'],
+        links: const [
+          JobLink(url: 'https://github.com/vkram2711/AI-Fresh-Station', icon: Icons.code, tooltip: 'GitHub'),
+        ],
+      ),
+      JobModel(
+        mainImage: 'assets/bond.png',
+        titleShort: 'Bond Film',
+        title: TextSpan(
+          text: 'Bond Film Platform',
+          style: accentTextStyle(context, fontSize: 36),
+        ),
+        position: 'Android Developer',
+        description: [
+          'In 3 months developed an Android app for a video publishing platform similar to YouTube, enabling seamless video uploads, playback, and user engagement features.',
+          'Implemented video streaming, search, user authentication, and notification systems — providing a user-friendly interface for both creators and viewers.',
+        ],
+        timeInterval: 'Jun 2018 - Oct 2018',
+        skills: ['Java', 'Android'],
+      ),
     ];
 
     List<Widget> pageTabs = List.generate(

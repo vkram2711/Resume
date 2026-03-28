@@ -1,7 +1,7 @@
 # The Gray Area — Bias-Mitigating AI News Aggregator
 
 **Built at:** LabLab AI Hackathon (1 week)
-**Links:** [Hackathon page](https://lablab.ai/event/ai-startup-hackathon/minerva-go/the-gray-area-the-bias-mitigating-newsletter) · [Pitch deck](assets/pdf/gray_area.pdf) · [Video presentation](https://www.youtube.com/watch?v=BNrWjjfKyM0)
+**Links:** [Hackathon page](https://lablab.ai/event/ai-startup-hackathon/minerva-go/the-gray-area-the-bias-mitigating-newsletter) · [Pitch deck](assets/pdf/gray_area.pdf) · [Video presentation](https://www.youtube.com/watch?v=BNrWjjfKyM0) · [GitHub](https://github.com/vkram2711/Gray-Area-Server)
 
 ---
 

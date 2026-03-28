@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:resume/widgets/social_links.dart';
 import 'package:resume/widgets/text/accent_text.dart';
 import 'package:resume/widgets/text/primary_text.dart';
 import 'package:resume/widgets/text/secondary_header_text.dart';
@@ -26,7 +27,11 @@ class IntroPage extends StatelessWidget {
                 padding: EdgeInsets.only(top: 12),
                 child: PrimaryText(
                     'AI/Full-Stack Engineer with production experience shipping LLM pipelines, ML models, and full-stack products at startups. Based in Tokyo, open to English-friendly roles.'),
-              )
+              ),
+              Padding(
+                padding: EdgeInsets.only(top: 24),
+                child: SocialLinks(),
+              ),
             ],
           ),
         ),

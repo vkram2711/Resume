@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:resume/widgets/inherited/upwork_inherited.dart';
 import 'package:resume/widgets/page_view/top_bar_tab.dart';
@@ -26,13 +25,10 @@ class ResumeBar extends StatelessWidget {
             child: ResumeButton(
               'Resume',
               () {
-                if (UpworkInherited.of(context).upworkMode) {
-                  launch(
-                      'https://drive.google.com/file/d/1ITjez1QBfbC19HABDgvCtM-CFEYY3VA-/view?usp=sharing');
-                } else {
-                  launch(
-                      'https://drive.google.com/file/d/1ITjez1QBfbC19HABDgvCtM-CFEYY3VA-/view?usp=sharing');
-                }
+                launchUrl(
+                  Uri.base.resolve('assets/pdf/Vladyslav_Kramarenko_Resume.pdf'),
+                  mode: LaunchMode.externalApplication,
+                );
               },
             ),
           ),

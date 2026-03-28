@@ -5,6 +5,7 @@ import 'package:resume/widgets/company_logo.dart';
 import 'package:resume/widgets/inherited/resume_inherited.dart';
 import 'package:resume/widgets/text/primary_text.dart';
 import 'package:resume/widgets/text/secondary_header_text.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'buttons/details_button.dart';
 
 class WorkCard extends StatelessWidget {
@@ -51,7 +52,7 @@ class WorkCard extends StatelessWidget {
         Padding(
           padding: EdgeInsets.only(left: padding),
           child: Hero(
-            tag: 'work_card_${jobModel.title.toPlainText()}',
+            tag: 'work_card_${jobModel.titleShort}',
             child: Material(
               color: Colors.transparent,
               child: Container(
@@ -76,6 +77,7 @@ class WorkCard extends StatelessWidget {
                               child: CompanyLogo(
                                 jobModel.mainImage,
                                 secondaryImage: jobModel.secondaryImage,
+                                title: jobModel.titleShort,
                               ),
                             ),
                           ],
@@ -111,11 +113,35 @@ class WorkCard extends StatelessWidget {
                               Flexible(
                                 child: _buildDescription(context, jobModel.description),
                               ),
-                              Align(
-                                alignment: Alignment.bottomRight,
-                                child: Padding(
-                                  padding: EdgeInsets.only(right: padding, top: 16),
-                                  child: PrimaryText(jobModel.timeInterval),
+                              Padding(
+                                padding: EdgeInsets.only(right: padding, top: 16),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    PrimaryText(jobModel.timeInterval),
+                                    if (jobModel.links.isNotEmpty) ...[
+                                      const SizedBox(width: 16),
+                                      ...jobModel.links.map((link) => Padding(
+                                            padding: const EdgeInsets.only(left: 8),
+                                            child: OutlinedButton.icon(
+                                              onPressed: () => launch(link.url),
+                                              icon: Icon(link.icon, size: 16, color: accentColor),
+                                              label: Text(
+                                                link.tooltip,
+                                                style: TextStyle(fontSize: 13, color: accentColor),
+                                              ),
+                                              style: OutlinedButton.styleFrom(
+                                                side: BorderSide(color: accentColor),
+                                                shape: const RoundedRectangleBorder(borderRadius: BorderRadius.zero),
+                                                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+                                                minimumSize: Size.zero,
+                                                tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                                              ),
+                                            ),
+                                          )),
+                                    ],
+                                  ],
                                 ),
                               ),
                             ],

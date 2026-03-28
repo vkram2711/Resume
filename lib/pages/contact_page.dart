@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:resume/widgets/resume_button.dart';
+import 'package:resume/widgets/social_links.dart';
 import 'package:resume/widgets/text/accent_text.dart';
 import 'package:resume/widgets/text/primary_text.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -35,7 +36,11 @@ class ContactPage extends StatelessWidget {
         child: ResumeButton('Contact me', () {
           launch('mailto:vkramarenko.at.work@gmail.com?subject=Hello, Vlad');
         }),
-      )
+      ),
+      const Padding(
+        padding: EdgeInsets.only(top: 32),
+        child: SocialLinks(),
+      ),
     ]);
   }
 }

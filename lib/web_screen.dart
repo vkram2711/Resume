@@ -27,9 +27,7 @@ class _WebScreenState extends State<WebScreen> {
 
   @override
   void initState() {
-    print('init state web');
     widget.controller.addListener(() {
-      print('web: ${widget.controller.page}');
       widget.updatePage(widget.controller.page ?? 0);
     });
     return super.initState();
@@ -98,10 +96,7 @@ class _WebScreenState extends State<WebScreen> {
 
   @override
   void dispose() {
-    print('dispose web');
-    widget.controller.removeListener(() {
-      print('web removed');
-    });
+    widget.controller.removeListener(() {});
     return super.dispose();
   }
 }

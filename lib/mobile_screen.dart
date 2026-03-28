@@ -27,12 +27,8 @@ class _MobileScreenState extends State<MobileScreen> {
 
   @override
   void initState() {
-    print('init state mobile');
     widget.scrollController.addListener(() {
-      print(
-          'mobile: ${widget.scrollController.offset / MobileScreen.maxHeight}');
-      widget
-          .updatePage(widget.scrollController.offset / MobileScreen.maxHeight);
+      widget.updatePage(widget.scrollController.offset / MobileScreen.maxHeight);
     });
     return super.initState();
   }
@@ -86,10 +82,7 @@ class _MobileScreenState extends State<MobileScreen> {
 
   @override
   void dispose() {
-    print('dispose mobile');
-    widget.scrollController.removeListener(() {
-      print('mobile removed');
-    });
+    widget.scrollController.removeListener(() {});
     return super.dispose();
   }
 }
