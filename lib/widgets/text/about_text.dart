@@ -2,35 +2,28 @@ import 'package:flutter/material.dart';
 import 'package:resume/resources/styles.dart';
 
 class AboutText extends StatelessWidget {
-  const AboutText({Key? key}) : super(key: key);
+  final double fontSize;
+
+  const AboutText({Key? key, this.fontSize = 20}) : super(key: key);
+
+  static const _paragraphs = [
+    "I'm Vlad, an AI/Full-Stack Engineer with production experience shipping LLM pipelines, ML models, and full-stack products at startups. My focus is on AI and backend engineering — XGBoost models, RAG architectures, LLM integrations, and scalable web applications.",
+    "Most recently, I was an ML/AI Engineer at PrivateJet.com, where I built an LLM-integrated XGBoost pricing model trained on 100k+ charter flight records (improving quote accuracy by ~20%) and evaluated 20 locally-hosted LLMs for sales automation. Before that, I worked as a Full-Stack / AI Engineer at Edgur (an early-stage edtech startup in Atlanta), and independently as a consultant on Upwork, completing 10+ backend, mobile, and AI projects across continents.",
+    "I studied CS and Business at Minerva University — a selective program (acceptance rate ~1.5%) with a global rotational model across 7 cities, including SF, Seoul, Berlin, Buenos Aires, Taipei, and Tokyo.",
+    "Currently based in Tokyo (valid zairyu card), graduating May 2026, and looking for an AI/full-stack engineering role at an English-friendly tech company in Tokyo.",
+  ];
 
   @override
   Widget build(BuildContext context) {
-    return RichText(
-        text: TextSpan(children: [
-      TextSpan(
-          text:
-              'Hi! My name is Vlad, and I’m a professional software developer. I started my programming journey with freelance and ',
-          style: primaryTextStyle(context)),
-      TextSpan(text: 'android ', style: accentTextStyle(context)),
-      TextSpan(
-          text:
-              'development four years ago. But the reality shows that it’s very hard to stick to one platform, especially if you work with startups. At some point, the time came, and a new project required a cross-platform solution, so in 2 months, I migrated to ',
-          style: primaryTextStyle(context)),
-      TextSpan(text: 'Flutter ', style: accentTextStyle(context)),
-      TextSpan(
-          text:
-              'and worked with it for more than two years since that time. \n\nAlso, I learned the basics of backend with ',
-          style: primaryTextStyle(context)),
-      TextSpan(text: 'Python', style: secondaryAccentTextStyle(context)),
-      TextSpan(text: ', ', style: primaryTextStyle(context)),
-      TextSpan(text: 'Flask', style: secondaryAccentTextStyle(context)),
-      TextSpan(text: ', and ', style: primaryTextStyle(context)),
-      TextSpan(text: 'SQL ', style: secondaryAccentTextStyle(context)),
-      TextSpan(
-          text:
-              'to create server-side in case of necessity. \n\nI worked as a freelancer, regular developer, and even was a co-founder.',
-          style: primaryTextStyle(context)),
-    ]));
+    final style = primaryTextStyle(context, fontSize: fontSize);
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: _paragraphs
+          .map((p) => Padding(
+                padding: EdgeInsets.only(bottom: fontSize * 0.7),
+                child: Text(p, style: style, softWrap: true),
+              ))
+          .toList(),
+    );
   }
 }

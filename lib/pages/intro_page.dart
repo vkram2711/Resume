@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:resume/widgets/social_links.dart';
 import 'package:resume/widgets/text/accent_text.dart';
 import 'package:resume/widgets/text/primary_text.dart';
 import 'package:resume/widgets/text/secondary_header_text.dart';
@@ -19,14 +20,18 @@ class IntroPage extends StatelessWidget {
               AccentText('Hi, my name is'),
               SecondaryHeaderText('Vlad Kramarenko', fontSize: 64),
               PrimaryText(
-                'I make software for any platform.',
+                'I write code',
                 fontSize: 48,
               ),
               Padding(
                 padding: EdgeInsets.only(top: 12),
                 child: PrimaryText(
-                    'I’m a software engineer with a universal skillset. Usually, I build mobile apps that can be used everywhere, and even this site is actually a mobile app.'),
-              )
+                    'AI/Full-Stack Engineer with production experience shipping LLM pipelines, ML models, and full-stack products at startups. Based in Tokyo, open to English-friendly roles.'),
+              ),
+              Padding(
+                padding: EdgeInsets.only(top: 24),
+                child: SocialLinks(),
+              ),
             ],
           ),
         ),

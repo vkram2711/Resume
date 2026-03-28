@@ -11,6 +11,8 @@ class SecondaryHeaderText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
+      softWrap: true,
+      overflow: TextOverflow.visible,
       style: TextStyle(
           color: Theme.of(context).secondaryHeaderColor, fontSize: fontSize),
     );
