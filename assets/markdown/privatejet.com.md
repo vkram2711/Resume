@@ -1,11 +1,12 @@
-
 # PrivateJet.com — AI Pricing & Sales Automation
-Link: [https://privatejet.com/](https://privatejet.com/)
+
+**Link:** [privatejet.com](https://privatejet.com)
+**Duration:** May 2025 – Sep 2025 · Remote
 
 ## Overview
 PrivateJet.com is a charter flight brokerage platform connecting clients with private jet operators.
-The traditional sales process required a client to call the sales team just to get a rough price —
-creating friction and slowing down the funnel. This project replaced that with an AI-driven pricing
+The traditional sales process required clients to call the sales team just to get a rough price —
+creating friction and slowing the funnel. This project replaced that with an AI-driven pricing
 layer that gives users instant estimates upfront, so they can self-qualify before ever speaking to a human.
 
 ## How It Works
@@ -15,7 +16,7 @@ An XGBoost model trained on 100,000+ historical charter flight records predicts 
 given route, aircraft type, and date. When a user queries a flight, they receive an estimated price
 range immediately — no sales call required. If the estimate fits their budget, they can request a
 formal quote, at which point the sales team takes over. This filters out unqualified leads and lets
-sales focus on warm, interested prospects.
+the sales team focus on warm, interested prospects.
 
 **Key inputs to the model:**
 - Route (origin / destination)

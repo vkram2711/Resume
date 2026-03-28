@@ -1,25 +1,31 @@
+# Edgur — Full-Stack Software Developer / AI Engineer
 
-Link: [edgur.com](edgur.com)
+**Link:** [edgur.com](https://edgur.com)
+**Duration:** May 2024 – Sep 2024 · Atlanta, GA
 
-### About Edgur
-Edgur is an early-stage startup on a mission to revolutionize lifelong learning through personalized, bite-sized, and interactive educational content. Whether learners aim to upskill for their careers, explore new hobbies, or excel in school, Edgur empowers them through a community-driven platform that offers flexibility, personalization, and engagement.
+Edgur is an early-stage "TikTok for Education" startup building a community-driven platform for personalized, bite-sized learning content.
 
-### My Contributions
+---
 
-- **Backend System Refactoring**  
-  Refactored core backend architecture, reducing codebase size by 40% and significantly improving scalability, maintainability, and performance.
+## Contributions
 
-- **Feature Development & Optimization**  
-  Developed and optimized critical platform features including:
-    - **Admin dashboard** with real-time user metrics for instant operational insights
-    - **Authentication system**, **payment integration**, and **search functionality**
-    - **AI-driven recommendation engine**, boosting user retention by 15%
+### Backend Refactor
+Led a major refactor of the core backend architecture, **cutting codebase size by 40%** while improving scalability, maintainability, and performance.
 
-- **AI & Search Integration**  
-  Led the integration of **semantic search** and **AI-generated playlists**, resulting in a 20% increase in user engagement.
+### Feature Development
+Architected and built critical platform features:
+- **Authentication system** — secure, scalable user auth
+- **Billing integration** — subscription and payment flows
+- **Admin dashboard** — real-time user metrics and operational tooling
+- **Search functionality** — fast, indexed content search
 
-- **Operational Tooling**  
-  Built a comprehensive admin dashboard enabling real-time platform activity tracking, improving operational decision-making efficiency by an estimated 30%.
+These features collectively contributed to a **15% improvement in user retention**.
 
-### Impact
-My work at Edgur directly contributed to enhanced platform stability, smarter user personalization, and increased user engagement—paving the way for a scalable, intelligent learning ecosystem.
+### AI & Semantic Search Integration
+Led the integration of **semantic search** and an **AI recommendation engine**, resulting in a **+20% increase in user engagement**.
+
+---
+
+## Impact
+
+My work directly improved platform stability, user personalization, and engagement — laying the technical foundation for Edgur's next growth phase.

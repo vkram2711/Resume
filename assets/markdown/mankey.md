@@ -1,14 +1,14 @@
-# AI-Augmented Zettelkasten: A Learning-First Knowledge Management System
+# Mankey — AI-Augmented Knowledge Management System
 
-**Role:** Product Designer & Systems Architect  
-**Duration:** Conceptual Design Project  
-**Tools:** React, Next.js, PostgreSQL, Claude API, Vector Embeddings
+**Role:** Product Designer & Fullstack Developer
+**Date:** Feb 2025
+**Stack:** React, Next.js, PostgreSQL, Claude API, pgvector
 
 ---
 
 ## Project Overview
 
-Designed a knowledge management system that solves the fundamental tension in AI-assisted note-taking: **how to leverage AI for efficiency without bypassing the cognitive work that makes learning stick**. While tools like Notion AI and Readwise write notes for you, research shows that the act of synthesis is what creates retention. This system uses AI to reduce friction for engagement while preserving—and amplifying—the cognitive effort required for deep learning.
+Designed a knowledge management system that solves the fundamental tension in AI-assisted note-taking: **how to leverage AI for efficiency without bypassing the cognitive work that makes learning stick**. While tools like Notion AI and Readwise write notes for you, research shows that synthesis is what creates retention. This system uses AI to reduce friction while preserving — and amplifying — the cognitive effort required for deep learning.
 
 ---
 
@@ -16,15 +16,15 @@ Designed a knowledge management system that solves the fundamental tension in AI
 
 Current PKM (Personal Knowledge Management) tools fall into two camps:
 
-**Manual systems** (Obsidian, Roam) require significant effort to maintain, leading to:
-- Capture friction → people don't take notes
+**Manual systems** (Obsidian, Roam) require significant effort to maintain:
+- Capture friction → people stop taking notes
 - Synthesis burden → unprocessed notes pile up
 - Navigation complexity → information gets lost
 
 **AI-assisted systems** (Notion AI, Reflect) automate too much:
-- AI writes summaries → user doesn't process information
+- AI writes summaries → the user never processes the information
 - Auto-generated notes → no personal synthesis
-- Wikipedia-style outputs → alien to the user's thinking
+- Wikipedia-style outputs → alien to the user's own thinking
 
 The result: **tools optimize for quantity of notes over quality of learning**.
 
@@ -83,8 +83,8 @@ When vault reaches critical mass, AI detects topic clusters and proposes hub not
 
 **AI role:** Detects clusters, groups into sub-themes, generates starter outline. User writes all synthesis text.
 
-**Example workflow:**  
-User creates 9 permanent notes about attention, flow, and distraction over 3 weeks → AI suggests "The Architecture of Deep Work" hub → User writes synthesis explaining how these form a coherent theory → Hub becomes navigable entry point + pre-structured outline for publishing.
+**Example workflow:**
+User creates 9 permanent notes about attention, flow, and distraction over 3 weeks → AI suggests "The Architecture of Deep Work" hub → User writes a synthesis explaining how these form a coherent theory → Hub becomes a navigable entry point and pre-structured outline for publishing.
 
 ### 4. **Publishing** (Document Editor)
 Editorial interface (cream paper, Playfair Display typography) for turning notes into public-facing work:

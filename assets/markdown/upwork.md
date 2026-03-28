@@ -1,36 +1,32 @@
+# Upwork — Independent Software Consultant
 
-##  Overview
+**Profile:** [upwork.com/freelancers/~01fde4bc85457f3469](https://www.upwork.com/freelancers/~01fde4bc85457f3469)
+**Duration:** Feb 2022 – Aug 2023
 
-[Profile link](https://www.upwork.com/freelancers/~01fde4bc85457f3469)
-![Internals](assets/images/Upwork/profile.png#500x500)
+![Profile](assets/images/Upwork/profile.png)
 
-Over the past few years, I’ve built a strong presence on Upwork by delivering high-quality technical solutions to global clients. I’ve completed **10+ projects** and earned **$10,000+** in total revenue, maintaining **consistent 4–5 star reviews** and long-term relationships with satisfied clients.
+10+ completed contracts with consistent 5-star reviews across backend, mobile, and AI projects for clients across Europe, the Middle East, and North America.
 
-## Core Expertise
-
-- **Flutter Development**
-- **AI Chatbot Integration**
-- **Backend Development**
+---
 
 ## Selected Projects
 
-### Mobile Crypto Banking App (Italy-based Client)
-- Built an MVP Flutter app integrating **Kraken** and **Circle APIs** for transferring USDC and buying different crypto assets 
-- Enabled seamless **USDC transactions** and managed wallet operations
-- App capable of processing up to **1,000 daily transactions**
+### Crypto Banking MVP — Italy-based Client
 
-![Internals](assets/images/Upwork/seventhythree_main.png#600x1200)
-![Internals](assets/images/Upwork/seventhythree_crypto.png#600x1200)
-![Internals](assets/images/Upwork/seventhythree_graph.png#600x1200)
+Built a Flutter mobile app with a Go backend for a crypto banking MVP. Integrated the **Kraken** and **Circle APIs** for buying crypto assets and transferring USDC, with the system capable of processing up to **1,000 seamless daily transactions** with zero critical failures.
 
+![Main](assets/images/Upwork/seventhythree_main.png)
+![Crypto](assets/images/Upwork/seventhythree_crypto.png)
+![Graph](assets/images/Upwork/seventhythree_graph.png)
 
-### Clinic Chatbot API (Sweden)
-- Created a **customer support chatbot** using the clinic’s FAQ as a knowledge base
-- Automated routine inquiries, reducing manual support load by **~30%**
-- Improved overall response times by **~50%**
+---
 
-### Educational Assistant Bot (Saudi Arabia)
-- Developed a chatbot to assist **teachers with lesson planning**
-- Parsed **text and video files** to create a relevant knowledge base
-- Deployed via **Telegram bot**, reducing preparation time by **~25%**
+### Healthcare Support Chatbot — Sweden-based Clinic
 
+Designed and deployed a conversational support API using the clinic's FAQ as a knowledge base. The chatbot automated triage for common patient queries, **cutting manual support load by 30%** and freeing staff to focus on complex cases.
+
+---
+
+### AI Educational Assistant — Saudi Arabian Edtech Client
+
+Built a **RAG-based chatbot** to assist teachers with lesson planning. The system ingested a knowledge base from text and video files and was deployed via a **Telegram bot**. Reduced lesson preparation time by **25%**.

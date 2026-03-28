@@ -1,45 +1,52 @@
-### **The Problem**
+# AI Fresh Station — Automated Indoor Gardening System
 
-**Link for pitchdeck:** [Pitchdeck](https://drive.google.com/file/d/1gsBT_K1n_qIYcLob0cSxa1mpbCMNQSrz/view?usp=sharing)
+**Role:** Co-Founder, Software Developer (Backend/Mobile)
+**Duration:** Nov 2019 – Dec 2020
+**Links:** [Pitch deck](assets/pdf/ai_fresh_station.pdf)
 
+---
 
-Many city dwellers lack access to fresh vegetables and greenery. While some aspire to grow their own food, urban life presents significant challenges—limited space, lack of natural sunlight, and the need for constant plant care. 
+## The Problem
 
-This has led to the rise of home gardening devices that use artificial sunlight and automated irrigation to enable indoor cultivation. 
+Many city dwellers lack access to fresh vegetables and greenery. While some aspire to grow their own food, urban life presents significant challenges: limited space, lack of natural sunlight, and the need for constant plant care.
 
-![Aerogarden](https://m.media-amazon.com/images/I/81ecF6hJflL._AC_UF1000,1000_QL80_.jpg#500x500)
+Existing home gardening devices use artificial sunlight and automated irrigation, but most suffer from the same inefficiencies — too much space, too little yield, and no scalability for semi-industrial use.
 
-However, most existing solutions suffer from inefficiencies: they take up too much space, do not yield enough for daily consumption, and lack scalability for semi-industrial use.
+## The Solution
 
-### **The Solution: AI Fresh Station**
-My friend, **[Oleh Bielous](https://www.linkedin.com/in/oleh-bielous/)**, saw an opportunity to create a better solution. His concept revolved around **modular, space-efficient, and AI-powered indoor gardening**.
-![Device](assets/images/AI%20Fresh%20Station/device.jpg#500x500)
+My co-founder **[Oleh Bielous](https://www.linkedin.com/in/oleh-bielous/)** designed a modular, AI-powered indoor gardening system built around a key insight: if each pot has independent irrigation control, you can stack them vertically and stagger growth cycles to produce a continuous supply of fresh produce.
 
- Unlike conventional devices, his design introduced a **stackable system** composed of **individual pots**, each with **independent irrigation control**. This unique approach allowed for:
- ![Internals](assets/images/AI%20Fresh%20Station/pots%20detached.jpg#500x500)
+![Device](assets/images/AI%20Fresh%20Station/device.jpg)
 
-- **Vertical stacking** for high-yield growth in limited spaces, making it suitable not just for homes but also for restaurants and urban farms.
-- **Precise irrigation control** for each pot, enabling staggered growth cycles. By adjusting watering schedules, plants could grow in smooth "waves," ensuring a continuous supply of fresh produce.
-- **AI-powered plant health monitoring**, with an integrated **camera system** to analyze plant conditions and detect early signs of disease or stress.
+The system features:
+- **Vertical stacking** for high-yield growth in limited spaces — suitable for homes, restaurants, and urban farms
+- **Per-pot irrigation control** enabling staggered growth waves for a continuous harvest
+- **AI-powered plant health monitoring** via an integrated camera that detects early signs of disease or stress
 
-![Internals](assets/images/AI%20Fresh%20Station/electronics%20and%20custom%20plate.jpg#500x500)
-![Internals](assets/images/AI%20Fresh%20Station/v2%20blueprint.jpg#500x500)
+![Internals](assets/images/AI%20Fresh%20Station/pots%20detached.jpg)
+![Internals](assets/images/AI%20Fresh%20Station/electronics%20and%20custom%20plate.jpg)
+![Blueprint](assets/images/AI%20Fresh%20Station/v2%20blueprint.jpg)
 
-### **My Role in the Project**
-I was responsible for developing the **mobile app** that served as a **remote control** for the system, allowing users to monitor and manage their crops seamlessly. Additionally, I built the **server infrastructure** that connected the app to the gardening device, ensuring real-time data exchange and control.
-From the app user could schedule plant growing, control the device(like turning off the light) and monitor the plants. Since we wanted our app to work on both iOS and Android I had to switch from Android to **Flutter** and learn it in the matter of weeks, and since I never worked on backend prior this project I also had to learn **Python, Flask, MySQL**.
+## My Role
+
+I built the **Flutter mobile app** and the **server-side infrastructure** (Python, Flask, MySQL) that connected the app to the hardware device. Users could schedule plant growing cycles, control the device remotely (e.g., turn lights on/off), and monitor plant health in real time. The system maintained **99.9% uptime** across hardware and app.
+
+This was my first time working with both Flutter and backend development — I learned both from scratch over the course of the project.
 
 Screenshots:
 
+![Screenshot 1](assets/images/AI%20Fresh%20Station/screenshot1.png)
+![Screenshot 2](assets/images/AI%20Fresh%20Station/screenshot2.png)
 
-![Internals](assets/images/AI%20Fresh%20Station/screenshot1.png#1200x600)
-![Internals](assets/images/AI%20Fresh%20Station/screenshot2.png#1200x600)
+## Awards
 
+We showcased AI Fresh Station at international engineering exhibitions and received:
 
-### **Recognition and Impact**
-We showcased AI Fresh Station at multiple **engineering exhibitions**, receiving **several awards** for its innovation and practical application. The project demonstrated the potential of smart agriculture in urban environments, bridging the gap between technology and sustainable food production.
+- 🥇 **Gold medal** — INTARG 2020 (Poland)
+- 🥈 **Silver medal** — iCan 2020
+- 🥈 **Silver medal** — Warsaw Invention Show
 
-This project won silver medal at iCan 2020, a silver medal at Warsaw Invention Show, a gold medal at INTARG Poland, Silver medal at iCan 
+3 competitions, 60+ countries, 475 participants.
 
-![Warsaw](assets/images/AI%20Fresh%20Station/warsawinvention.jpeg#300x300)
-![Intarg](assets/images/AI%20Fresh%20Station/intarg.jpeg#300x300)
+![Warsaw](assets/images/AI%20Fresh%20Station/warsawinvention.jpeg)
+![INTARG](assets/images/AI%20Fresh%20Station/intarg.jpeg)

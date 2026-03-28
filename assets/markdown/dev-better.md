@@ -1,17 +1,16 @@
-### Flutter Developer at Dev Better (Outsourcing Partner for FitTrack)
-[FitTrack](https://tryfittrack.com/)
-[Dev-Better](https://dev-better.com/)
+# Dev-Better / FitTrack — Flutter Developer
 
-At Dev Better, I worked as a Flutter developer on **FitTrack**, a fast-growing fitness startup that sells smart scales and serves over **800,000 global users**.
+**Links:** [Dev-Better](https://dev-better.com) · [FitTrack](https://tryfittrack.com)
+**Duration:** Jun 2021 – Nov 2021 · Kyiv, Ukraine
 
-#### Key Contributions:
+Dev-Better is a software outsourcing company. I was placed on **FitTrack**, a fast-growing fitness startup with smart scales and over **800,000 global users**.
 
-- **Built Integration Test Infrastructure**  
-  Designed and implemented a robust integration testing system for the cross-platform FitTrack mobile app. This improved app reliability by **15%**, ensuring a more stable experience for users across iOS and Android.
+---
 
-- **Streamlined Developer Onboarding**  
-  Created detailed onboarding tutorials and internal documentation, which reduced new developer ramp-up time from **one week to two days**, boosting team productivity by **70%**.
+## Contributions
 
-- **Team Leadership and Quality Assurance**  
-  Led a team of **three Flutter developers** to write and maintain over **50 integration test cases** covering key app screens and workflows. This initiative significantly reduced the number of critical bugs and ensured higher code quality throughout development.
+### Integration Test Infrastructure
+Designed and implemented a robust integration testing system for the cross-platform FitTrack mobile app. Led a team of three Flutter developers to write and maintain **50+ test cases** covering key app screens and workflows. This improved cross-platform reliability by **15%** and significantly reduced the number of critical bugs.
 
+### Developer Onboarding
+Created detailed onboarding tutorials and internal documentation that reduced new developer ramp-up time from **one week to two days**, boosting team productivity by **70%**.

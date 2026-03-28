@@ -25,7 +25,7 @@ class IntroPage extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.only(top: 12),
                 child: PrimaryText(
-                    'AI/Full-stack engineer with 6+ years of experience building and shipping production systems across startups and freelance projects'),
+                    'AI/Full-Stack Engineer with production experience shipping LLM pipelines, ML models, and full-stack products at startups. Based in Tokyo, open to English-friendly roles.'),
               )
             ],
           ),

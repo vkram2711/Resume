@@ -81,8 +81,7 @@ class _PortfolioPageState extends State<PortfolioPage> {
         ]),
         position: 'Backend Developer',
         description: [
-          'Our team developed in 1 week a prototype of AI generated news list for LabLab hackathon',
-          'Internet is getting scrapped for same news coverage in different media and compiled into one'
+          'Built in one week for the LabLab AI hackathon: an AI-powered news aggregator that scrapes the same story from multiple outlets and compiles them into a single, balanced summary to reduce media bias.',
         ],
         timeInterval: 'Feb 2023',
         skills: [],
@@ -96,13 +95,12 @@ class _PortfolioPageState extends State<PortfolioPage> {
               link: 'https://drive.google.com/file/d/1gsBT_K1n_qIYcLob0cSxa1mpbCMNQSrz/view?usp=sharing',
               context: context),
         ]),
-        position: 'Software Engineer',
+        position: 'Co-Founder, Software Developer (Backend/Mobile)',
         description: [
-          'Our team developed an indoor gardening system that helps users to grow crops without leaving home.',
-          'My role was to develop a mobile app and server-side.',
-          'This project won silver medal at iCan 2020, a silver medal at Warsaw Invention Show, and a gold medal at INTARG Poland.',
+          'Co-founded an IoT startup building an automated indoor gardening system; built a Flutter mobile app and Flask/SQL backend enabling real-time device control and data sync with 99.9% uptime.',
+          'Won Gold (INTARG 2020), two silver medals (iCan, Warsaw Invention Show) across 3 international invention competitions (60+ countries, 475 participants).',
         ],
-        timeInterval: 'Nov 2019 - Dec 2021',
+        timeInterval: 'Nov 2019 - Dec 2020',
         skills: [],
       ),
 
